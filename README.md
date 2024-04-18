@@ -1,6 +1,3 @@
-The application is a third-party software that facilitates communication with the client.
+This application makes my daily work easier.
 
-The purpose of the application is to generate special character messages (<center/br>) and letters (numbers or text).
-
-That helps communication between the user and the platform.
-
+Template generator with validation and different scenario depending on the entered values.
