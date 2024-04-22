@@ -74,8 +74,8 @@ function identityConfirmation() {
       case "option3":
         template = "<center> &lt;center&gt; Vă rugăm să ne trimiteți un video de cel putin 10 secunde la &lt;b&gt; contact@winbet.ro &lt;b&gt;, ținând buletinul în mână și site-ul WINBET.RO vizibil în fundal. &lt;br&gt;&lt;br&gt;";
           break;
-      case "option1":
-        template = "<center> &lt;center&gt; -----------  &lt;br&gt;&lt;br&gt; <br><br>";
+      case "option4":
+        template = "<center> &lt;center&gt; Vă rugăm să retrageți  &lt;/b&gt; întregul câștig obținut din bonus &lt;/b&gt; În caz contrar,  &lt;/b&gt;orice sumă rămasă pe cont  &lt;/b&gt; obținută din bonus va fi  &lt;/b&gt; anulată &lt;/b&gt; conform Termenilor și Condițiilor.";
           break;
         default:
           template = "Invalid option selected";
@@ -86,36 +86,33 @@ function identityConfirmation() {
     }
 
 
-// function eWalletHolder(){
-//     let dropdown = document.getElementById("dropdown");
-//     let selectOption = dropdown.options[dropdown.selectedIndex].value;
-//     let input = document.getElementById("mail_wallet").value;
-//     let template = `
-//     <center> &lt;center&gt; Va rugam incarcati o captura de ecran din contul de  ` + selectOption +": " + input + ` &lt;br&gt;&lt;br&gt;. <br> <br> Pe captura de ecran trebuie sa fie vizibile <b>numele titularului contului si adresa de e-mail - ${input}. &lt;br&gt;&lt;br&gt;`;
 
-//     messageStack.push(template);
-//     renderAllMessages();
-// };
 
 
 
 function eWalletHolder(){
     let dropdown = document.getElementById("dropdown");
     let selectOption = dropdown.options[dropdown.selectedIndex].value;
-    let input = document.getElementById("mail_wallet").value;
+    let inputValue = document.getElementById("mail_wallet").value;
 
-    // Validate the dropdown selection
+    let errors = []; 
+
+ 
     if (!validateDropdown(selectOption)) {
-        alert("Please select a valid option from the E-wallet.");
-        return;
+      errors.push("Please select a valid option from the E-wallet");
     }
-
-    // Validate the email input
-    if (!validateInput(input)) {
-        alert("Please enter a valid email address.");
-        return;
+  
+    
+    if (!validateInput(inputValue)) {
+      errors.push("Please enter a valid E-mail");
     }
-
+  
+    if (errors.length > 0) {
+      
+      alert("E-wallet Non-Holder:\n" + errors.join("\n"));
+      return; 
+    }
+  
     let template = `
     <center> &lt;center&gt; Va rugam incarcati o captura de ecran din contul de  ` + selectOption +": " + input + ` &lt;br&gt;&lt;br&gt;. <br> <br> Pe captura de ecran trebuie sa fie vizibile <b>numele titularului contului si adresa de e-mail - ${input}. &lt;br&gt;&lt;br&gt;`;
 
@@ -125,16 +122,20 @@ function eWalletHolder(){
 
 
 function bankStatemant(){
-  let input = document.getElementById("inputCard").value.trim();
+  let inputCard = document.getElementById("inputCard").value.trim();
 
-// Validate the input
-if (!validateInput(input)) {
-  // If input is empty, display an alert
-  alert("Bank Statement: Input card is empty");
-  return; // Return from the function, don't proceed further
-}
 
-// If input is not empty, proceed with adding the message to the stack
+  let errors = []; 
+
+  if (!validateInput(inputCard)) {
+    errors.push("Please enter a valid card");
+  }
+  
+  if (errors.length > 0) {
+    
+    alert("Holder Card:\n" + errors.join("\n"));
+    return; 
+  }
 
   let template = `
   <center>&lt;center&gt;Vă rugăm să încărcați un extras de cont pentru cardul cu ultimele cifre<b> &lt;b&gt; ${input} &lt;b&gt;</b> pe care să fie vizibile numele dumneavoastră complet, numărul de card și o tranzacție făcută către WINBET.&lt;br&gt;&lt;br&gt;`;
@@ -146,16 +147,19 @@ if (!validateInput(input)) {
 
 function cardHolder(){
   // Get the value of the input with ID "inputCard"
-  let input = document.getElementById("inputCard").value.trim(); // Trim whitespace
+  let inputCard = document.getElementById("inputCard").value.trim(); // Trim whitespace
 
-  // Validate the input
-  if (!validateInput(input)) {
-      // If input is empty, display an alert
-      alert("Holder: Input card is empty");
-      return; // Return from the function, don't proceed further
+  let errors = []; 
+
+  if (!validateInput(inputCard)) {
+    errors.push("Please enter a valid card");
   }
   
-  // If input is not empty, proceed with adding the message to the stack
+  if (errors.length > 0) {
+    
+    alert("Holder Card:\n" + errors.join("\n"));
+    return; 
+  }
   let template =  `
   <center>&lt;center&gt;Vă rugăm să încărcați poze față-verso ale cardului cu ultimele cifre  &lt;/b&gt;<b> ${input}</b>&lt;/b&gt;. &lt;br&gt;&lt;br&gt;<br><br>Pe poza față trebuie să fie vizibile <b> primele 6 si ultimele 4 cifre ale numărului cardului, data de expirare si numele titularului</b>, iar pe spate trebuie să fie <b>acoperit CVV-ul</b>.&lt;br&gt;&lt;br&gt;`;
 
@@ -169,33 +173,35 @@ function cardHolder(){
 
 
 
-// ---------------------------------------  DONE---------------------------------------------
+
 function nonHolderCard(){
   // Get the value of the inputs with IDs "inputCard" and "inputName"
   let inputCard = document.getElementById("inputCardBelong").value.trim();
-  let inputCardNameHolder = document.getElementById("inputCardNameHolder").value.trim();  // Trim whitespace
+  let inputName = document.getElementById("inputCardNameHolder").value.trim();  // Trim whitespace
 
-  // Validate the inputs
-  if (!validateInput(inputCard) && !validateInput(inputCardNameHolder)) {
-      // If both inputs are empty, display an alert indicating both inputs are empty
-      alert(" Non-Holder: Input card and input name are empty");
-      return; // Return from the function, don't proceed further
-  } else if (!validateInput(inputCard)) {
-      // If only inputCard is empty, display an alert indicating inputCard is empty
-      alert("Non-Holder:Input card is empty");
-      return; // Return from the function, don't proceed further
-  } else if (!validateInput(inputCardNameHolder)) {
-      // If only inputName is empty, display an alert indicating inputName is empty
-      alert("Non-Holder: Input name is empty");
-      return; // Return from the function, don't proceed further
+  let errors = []; 
+
+  if (!validateInput(inputCard)) {
+    errors.push("Please enter a valid card");
   }
   
+  if (!validateInput(inputName)) {
+    errors.push("Please enter a valid name");
+  }
+  
+  if (errors.length > 0) {
+    
+    alert("Non-Holder Card:\n" + errors.join("\n"));
+    return; 
+  }
+  
+  
   // If inputs are not empty, proceed with adding the message to the stack
-  let template =  ` <center>&lt;center&gt;Vă rugăm să încărcați pozele față-verso ale cardului cu ultimele cifre <b>${inputCard}</b>, precum și poza buletinului d-lui/d-nei <b>${inputCardNameHolder}</b> și o declarație pe propria răspundere a acestuia.
+  let template =  ` <center>&lt;center&gt;Vă rugăm să încărcați pozele față-verso ale cardului cu ultimele cifre <b>${inputCard}</b>, precum și poza buletinului d-lui/d-nei <b>${inputName}</b> și o declarație pe propria răspundere a acestuia.
 
   &lt;br&gt &lt;br&gt <br><br>
   
-  Declarația trebuie făcută după modelul: “<b>Subsemnatul ${inputCardNameHolder} deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe cardul cu ultimele cifre "${inputCard}" către Winbet.ro</b>”. Declarația trebuie să fie datată și semnată.
+  Declarația trebuie făcută după modelul: “<b>Subsemnatul ${inputName} deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe cardul cu ultimele cifre "${inputCard}" către Winbet.ro</b>”. Declarația trebuie să fie datată și semnată.
   
   &lt;br&gt &lt;br&gt <br><br>
   
@@ -207,9 +213,66 @@ function nonHolderCard(){
   renderAllMessages();
 }
 
+function declaration(){
+  let inputCard = document.getElementById("inputCardBelong").value;
+ let inputName = document.getElementById("inputCardNameHolder").value;
 
 
-// ---------------------------------------
+
+let errors = []; 
+
+if (!validateInput(inputCard)) {
+  errors.push("Please enter a valid card");
+}
+
+if (!validateInput(inputName)) {
+  errors.push("Please enter a valid name");
+}
+
+if (errors.length > 0) {
+  
+  alert("Non-Holder Card:\n" + errors.join("\n"));
+  return; 
+}
+
+let  template = `
+Declarația trebuie făcută după modelul: “<b>Subsemnatul ${inputName} deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe cardul cu ultimele cifre "${inputCard}" către Winbet.ro</b>”. Declarația trebuie să fie datată și semnată.&lt;br&gt;&lt;br&gt;`
+
+messageStack.push(template);
+renderAllMessages();
+}
+
+function additionalID(){
+  let inputCard = document.getElementById("inputCardBelong").value;
+ let inputName = document.getElementById("inputCardNameHolder").value;
+
+
+let errors = []; 
+
+
+if (!validateInput(inputCard)) {
+  errors.push("Please enter a valid card");
+}
+
+if (!validateInput(inputName)) {
+  errors.push("Please enter a valid name");
+}
+
+if (errors.length > 0) {
+  
+  alert("Non-Holder Card:\n" + errors.join("\n"));
+  return; 
+}
+
+
+
+let  template = `Va rugam incarcati pozele buletinului titularului cardului cu ultimele cifre &lt;/b&gt;<b>${inputCard} - ${inputName}</b>&lt;/b&gt;&lt;br&gt;&lt;br&gt;`
+
+messageStack.push(template);
+renderAllMessages();
+}
+
+
 
 
 
@@ -225,7 +288,7 @@ function validateInput(input) {
   return input !== "";
 }
 
-// ---------------------------------------
+
 
 
 
@@ -261,6 +324,15 @@ function copyContent() {
 
 function deposit(){
   let input = document.getElementById("deposit").value;
+
+  // Validate the input
+  if (!validateInput(input)) {
+    // If input is empty, display an alert
+    alert("Deposit: Input Suma card is empty");
+    return; // Return from the function, don't proceed further
+}
+
+
   let template = `
   <center>&lt;center&gt;<center>Pentru retragerea câștigurilor din oferta jucată este necesară o depunere de <b>${input} RON</b>, efectuată în ziua retragerii, după activarea bonusului. &lt;br&gt;`;
 
@@ -269,26 +341,6 @@ function deposit(){
   renderAllMessages();
 };
 
-function declaration(){
-  let input = document.getElementById("inputCardBelong").value;
- let CardNameHolder = document.getElementById("inputCardNameHolder").value;
-
-let  template = `
-Declarația trebuie făcută după modelul: “<b>Subsemnatul ${CardNameHolder} deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe cardul cu ultimele cifre "${input}" către Winbet.ro</b>”. Declarația trebuie să fie datată și semnată.&lt;br&gt;&lt;br&gt;`
-
-messageStack.push(template);
-renderAllMessages();
-}
-
-function additionalID(){
-  let input = document.getElementById("inputCardBelong").value;
- let CardNameHolder = document.getElementById("inputCardNameHolder").value;
-
-let  template = `Va rugam incarcati pozele buletinului titularului cardului cu ultimele cifre &lt;/b&gt;<b>${input} - ${CardNameHolder}</b>&lt;/b&gt;&lt;br&gt;&lt;br&gt;`
-
-messageStack.push(template);
-renderAllMessages();
-}
 
 
 
@@ -296,31 +348,37 @@ renderAllMessages();
 function nonHolderEWallet() {
   let dropdown = document.getElementById("dropDownNonHolder");
   let inputValue = document.getElementById("walletNonHolder").value.trim();
-  let cardNameHolder = document.getElementById("nameNonHolder").value.trim();
+  let inputName = document.getElementById("nameNonHolder").value.trim();
   let selectOption = dropdown.options[dropdown.selectedIndex].value;
 
-  // Validate the dropdown selection
-  if (!validateDropdown(selectOption)){
-      alert("Please select a valid option from the E-wallet.");
-      return;
+
+  let errors = []; 
+
+ 
+  if (!validateDropdown(selectOption)) {
+    errors.push("Please select a valid option from the E-wallet");
   }
 
-  // Validate the input value
+  
   if (!validateInput(inputValue)) {
-      alert("E-wallet Non-Holder -> Please enter your e-mail address ");
-      return;
+    errors.push("Please enter a valid E-mail");
   }
 
-  if (!validateInput(cardNameHolder)) {
-    alert("E-wallet Non-Holder -> Please enter a name for E-wallet Non-Holder");
-    return;
-}
+  
+  if (!validateInput(inputName)) {
+    errors.push("Please enter a valid Name");
+  }
 
+  if (errors.length > 0) {
+    
+    alert("E-wallet Non-Holder:\n" + errors.join("\n"));
+    return; 
+  }
 
   let template = `
-  <center>Vă rugăm să încărcați o captură de ecran din contul de ${selectOption} <b>${inputValue}</b>, precum și poza buletinului d-lui/d-nei <b>${cardNameHolder}</b> și o declarație pe propria răspundere a acestuia.
+  <center>Vă rugăm să încărcați o captură de ecran din contul de ${selectOption} <b>${inputValue}</b>, precum și poza buletinului d-lui/d-nei <b>${inputName}</b> și o declarație pe propria răspundere a acestuia.
   <br><br>
-  Declarația trebuie făcută după modelul: “<b>${cardNameHolder}, deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de Paysafe/Neteller/Skrill cu adresa de e-mail ... către Winbet.ro</b>”.&lt;br&gt;&lt;br&gt;
+  Declarația trebuie făcută după modelul: “<b>${inputName}, deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de Paysafe/Neteller/Skrill cu adresa de e-mail ... către Winbet.ro</b>”.&lt;br&gt;&lt;br&gt;
   <br><br>
   Declarația trebuie să fie datată și semnată.&lt;br&gt;&lt;br&gt;
   `;
@@ -330,56 +388,75 @@ function nonHolderEWallet() {
 }
 
 
-// function nonHolderEWallet() {
 
-//   let dropdown = document.getElementById("dropdownBelong");
-   
-//   // Get the value from the input field
-//   let inputValue = document.getElementById("walletBelong").value;
-//   let CardNameHolder = document.getElementById("nameWalletBelog").value;
-
-//   let selectOption = dropdown.options[dropdown.selectedIndex].value;
-  
-//   let template = `
-  
-  
-//   <center>Vă rugăm să încărcați o captură de ecran din contul de ${selectOption} <b>${inputValue}</b>, precum și poza buletinului d-lui/d-nei <b>${CardNameHolder}</b> și o declarație pe propria răspundere a acestuia.
-
-//   <br><br>
-  
-//   Declarația trebuie făcută după modelul: “<b>${CardNameHolder} , deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de Paysafe/Neteller/Skrill cu adresa de e-mail ... către Winbet.ro</b>”.&lt;br&gt;&lt;br&gt;
-  
-//   <br><br>
-  
-//   Declarația trebuie să fie datată și semnată.&lt;br&gt;&lt;br&gt;
-     
-//   `;
-//   messageStack.push(template);
-//   renderAllMessages();
-// }
 
 function declarationEwalletBelong(){
-  let dropdown = document.getElementById("dropdownBelong");
-  let inputValue = document.getElementById("walletBelong").value;
-  let CardNameHolder = document.getElementById("nameWalletBelog").value;
+  let dropdown = document.getElementById("dropDownNonHolder");
+  let inputValue = document.getElementById("walletNonHolder").value;
+  let inputName = document.getElementById("nameNonHolder").value;
 
   let selectOption = dropdown.options[dropdown.selectedIndex].value;
+  let errors = []; 
 
-  let template = `  Vă rugăm  încărcați declarația   după modelul: “<b>${CardNameHolder} , deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de ${selectOption} cu adresa de e-mail ${inputValue} către Winbet.ro</b>”.&lt;br&gt;&lt;br&gt;`;
+  
+  if (!validateDropdown(selectOption)) {
+    errors.push("Please select a valid option from the E-wallet");
+  }
+
+ 
+  if (!validateInput(inputValue)) {
+    errors.push("Please enter a valid E-mail");
+  }
+
+  
+  if (!validateInput(inputName)) {
+    errors.push("Please enter a valid Name");
+  }
+
+  
+  if (errors.length > 0) {
+  
+    alert("E-wallet Non-Holder:\n" + errors.join("\n"));
+    return;
+  }
+
+  let template = `  Vă rugăm  încărcați declarația   după modelul: “<b>${inputName} , deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de ${selectOption} cu adresa de e-mail ${inputValue} către Winbet.ro</b>”.&lt;br&gt;&lt;br&gt;`;
 
   messageStack.push(template);
   renderAllMessages();
 }
 
 function additionalIDwallet(){
-  let dropdown = document.getElementById("dropdownBelong");
-  let inputValue = document.getElementById("walletBelong").value;
-  let CardNameHolder = document.getElementById("nameWalletBelog").value;
+  let dropdown = document.getElementById("dropDownNonHolder");
+  let inputValue = document.getElementById("walletNonHolder").value;
+  let inputName = document.getElementById("nameNonHolder").value;
 
   let selectOption = dropdown.options[dropdown.selectedIndex].value;
 
+  let errors = []; 
 
-let  template = `Va rugam incarcati pozele buletinului titularului contului de ${selectOption} asociat adresei de <b>&lt;/b&gt; e-mail:${inputValue} - ${CardNameHolder}</b>&lt;/b&gt;&lt;br&gt;&lt;br&gt; `
+  
+  if (!validateDropdown(selectOption)) {
+    errors.push("Please select a valid option from the E-wallet");
+  }
+
+ 
+  if (!validateInput(inputValue)) {
+    errors.push("Please enter a valid E-mail");
+  }
+
+  if (!validateInput(inputName)) {
+    errors.push("Please enter a valid Name");
+  }
+
+  if (errors.length > 0) {
+    
+    alert("E-wallet Non-Holder:\n" + errors.join("\n"));
+    return; 
+  }
+
+
+let  template = `Va rugam incarcati pozele buletinului titularului contului de ${selectOption} asociat adresei de <b>&lt;/b&gt; e-mail:${inputValue} - ${inputName}</b>&lt;/b&gt;&lt;br&gt;&lt;br&gt; `
 
 messageStack.push(template);
 renderAllMessages();
