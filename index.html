@@ -5,7 +5,7 @@
     <title>Generator</title>
 </head>
 <body  >
-  <div class="fixed">
+  <!-- <div class="fixed">
     <div>
         <select id="dropdownFixedMessages">
         <option disabled selected>Confirmarea identitatii</option>
@@ -36,7 +36,37 @@
           </select>
           <button class = "button" onclick="otherDocuments()">Other Documents</button>
     </div>
+</div> -->
+
+<div class="fixed">
+    <select class="dropdown-button" id="dropdownFixedMessages" onchange="identityConfirmation()">
+        <option disabled selected>Confirmarea identitatii</option>
+        <option value="option1">Nume Incorect</option>
+        <option value="option2">CNP Incorect</option>
+        <option value="option3">Schimbarea numelui (casatorie/divort)</option>
+        <option value="option4">Rezolutia documentului este prea mica</option>
+        <option value="option5">Datele nu sunt complet vizibile</option>
+        <option value="option6">Rezolutia documentului este prea mica</option>
+        <option value="option7">Captura de ecran</option>
+        <option value="option8">Documentul este expirat.</option>
+        <option value="option9">Document invalid.</option>
+        <option value="option10">Documente emise in alte tari.</option>
+        <option value="option11">Poza pasaportului nu include ambele pagini.</option>
+    </select>
+    <select class="dropdown-button" id="dropdownOtherDoc" onchange="otherDocuments()">
+        <option disabled selected>Documente aditionale</option>
+        <option value="option1">Cerere selfie</option>
+        <option value="option2">Cerere factura de utilitati</option>
+        <option value="option3">Confirmare Video-Sport</option>
+        <option value="option4">Retreagere unica</option>
+        <option value="optionx">Xxxx</option>
+        <option value="optionx">Xxxx</option>
+    </select>
 </div>
+
+
+
+
 
 
 <div class="container">

@@ -11,80 +11,74 @@ function identityConfirmation() {
     var dropdown = document.getElementById("dropdownFixedMessages");
     var selectedOption = dropdown.options[dropdown.selectedIndex].value;
     var template = "";
-  
-    
 
     switch(selectedOption) {
-      case "option1":
-        template = "<center> &lt;center&gt; Numele din cont nu corespunde cu cel de pe document. Pentru actualizarea datelor dumneavoastră, vă rugăm să trimiteți o poză de tip selfie în care să țineți buletinul în dreptul feței.  &lt;br&gt;&lt;br&gt;";
-        break;
-      case "option2":
-        template = " <center> &lt;center&gt; CNP-ul din cont nu corespunde cu cel din document. Vă rugăm să va creați un cont cu datele corecte. &lt;br&gt;&lt;br&gt; ";
-        break;
-      case "option3":
-        template = " <center> &lt;center&gt; Datele de pe document nu corespund cu cele din cont. În cazul schimbării numelui, vă rugăm să încărcați poza certificatului de căsătorie/divorț. &lt;br&gt;&lt;br&gt;";
-        break;
-      case "option4":
-        template = " <center> &lt;center&gt; Rezoluția documentului este prea mică. Vă rugăm să refaceti fotografia astfel încât aceasta să aibă o rezoluție mai mare. &lt;br&gt;&lt;br&gt; ";
-        break;
-      case "option5":
-        template = " <center> &lt;center&gt; Datele de pe document nu sunt complet vizibile. Vă rugăm să refaceți poza astfel incât aceasta sa fie color, toate datele să fie clar vizibile, iar toate 4 laturile documentului să fie incluse în poză. &lt;br&gt;&lt;br&gt; ";
-        break;
-      case "option6":
-        template = " <center> &lt;center&gt; Rezoluția documentului este prea mică. Vă rugăm să refaceti fotografia astfel încât aceasta să aibă o rezoluție mai mare. &lt;br&gt;&lt;br&gt; ";
-          break;
+        case "option1":
+            template = "<center> &lt;center&gt; Numele din cont nu corespunde cu cel de pe document. Pentru actualizarea datelor dumneavoastră, vă rugăm să trimiteți o poză de tip selfie în care să țineți buletinul în dreptul feței.  &lt;br&gt;&lt;br&gt;";
+            break;
+        case "option2":
+            template = " <center> &lt;center&gt; CNP-ul din cont nu corespunde cu cel din document. Vă rugăm să va creați un cont cu datele corecte. &lt;br&gt;&lt;br&gt; ";
+            break;
+        case "option3":
+            template = " <center> &lt;center&gt; Datele de pe document nu corespund cu cele din cont. În cazul schimbării numelui, vă rugăm să încărcați poza certificatului de căsătorie/divorț. &lt;br&gt;&lt;br&gt;";
+            break;
+        case "option4":
+            template = " <center> &lt;center&gt; Rezoluția documentului este prea mică. Vă rugăm să refaceti fotografia astfel încât aceasta să aibă o rezoluție mai mare. &lt;br&gt;&lt;br&gt; ";
+            break;
+        case "option5":
+            template = " <center> &lt;center&gt; Datele de pe document nu sunt complet vizibile. Vă rugăm să refaceți poza astfel incât aceasta sa fie color, toate datele să fie clar vizibile, iar toate 4 laturile documentului să fie incluse în poză. &lt;br&gt;&lt;br&gt; ";
+            break;
+        case "option6":
+            template = " <center> &lt;center&gt; Rezoluția documentului este prea mică. Vă rugăm să refaceti fotografia astfel încât aceasta să aibă o rezoluție mai mare. &lt;br&gt;&lt;br&gt; ";
+            break;
         case "option7":
-          template = " <center> &lt;center&gt; Nu sunt acceptate capturi de ecran în vederea verificării documentelor. Vă rugăm să refaceți o poză documentului în original. &lt;br&gt;&lt;br&gt; ";
-          break;
+            template = " <center> &lt;center&gt; Nu sunt acceptate capturi de ecran în vederea verificării documentelor. Vă rugăm să refaceți o poză documentului în original. &lt;br&gt;&lt;br&gt; ";
+            break;
         case "option8":
-          template = " <center> &lt;center&gt; Documentul este expirat. Vă rugăm să încărcați un document valid. &lt;br&gt;&lt;br&gt; ";
-          break;
+            template = " <center> &lt;center&gt; Documentul este expirat. Vă rugăm să încărcați un document valid. &lt;br&gt;&lt;br&gt; ";
+            break;
         case "option9":
-          template = " <center> &lt;center&gt; Sunt acceptate doar documente emise în România. Vă rugăm să trimiteți poza unei cărți de identitate emisă în România sau poza față-verso a permisului de ședere. &lt;br&gt;&lt;br&gt; ";
-          break;
+            template = " <center> &lt;center&gt; Sunt acceptate doar documente emise în România. Vă rugăm să trimiteți poza unei cărți de identitate emisă în România sau poza față-verso a permisului de ședere. &lt;br&gt;&lt;br&gt; ";
+            break;
         case "option10":
-          template = " <center> &lt;center&gt; Documentul nu este acceptat pentru verificare. Vă rugăm să trimiteți o poză a cărții dumneavoastră de identitate, a primelor două pagini ale pașaportului sau al permisului de ședere. &lt;br&gt;&lt;br&gt; ";
-          break;
-          case "option11":
-          template = " <center> &lt;center&gt; Vă rugăm să refaceți poza pașaportului astfel încât primele 2 pagini ale documentului sa fie vizibile în întregime în aceeași poză. &lt;br&gt;&lt;br&gt; ";
-          break;
-          
-      default:
-        template = "Invalid option selected";
+            template = " <center> &lt;center&gt; Documentul nu este acceptat pentru verificare. Vă rugăm să trimiteți o poză a cărții dumneavoastră de identitate, a primelor două pagini ale pașaportului sau al permisului de ședere. &lt;br&gt;&lt;br&gt; ";
+            break;
+        case "option11":
+            template = " <center> &lt;center&gt; Vă rugăm să refaceți poza pașaportului astfel încât primele 2 pagini ale documentului sa fie vizibile în întregime în aceeași poză. &lt;br&gt;&lt;br&gt; ";
+            break;
+        default:
+            template = "Invalid option selected";
     }
-  
+
     messageStack.push(template);
     renderAllMessages();
-  }
+}
 
-
-
-  function otherDocuments() {
+function otherDocuments() {
     var dropdown = document.getElementById("dropdownOtherDoc");
     var selectedOption = dropdown.options[dropdown.selectedIndex].value;
     var template = "";
-  
+
     switch(selectedOption) {
-      case "option1":
-        template = "<center> &lt;center&gt; Verificarea identității nu a fost finalizată. Vă rugăm reîncărcați poza CI și o poză de tip selfie în care să țineți CI în dreptul feței. Aveți grijă ca toate detaliile de pe CI, cât și fața dumneavoastră să fie complet vizibile.  &lt;br&gt;&lt;br&gt; ";
-        break;
-      case "option2":
-        template = "<center> &lt;center&gt; Vă rugăm să încărcați o factură de utilități nu mai veche de 3 luni pe care să fie vizibilă adresa dumneavoastră din buletin.   &lt;br&gt;&lt;br&gt;";
-        break;
-      case "option3":
-        template = "<center> &lt;center&gt; Vă rugăm să ne trimiteți un video de cel putin 10 secunde la &lt;b&gt; contact@winbet.ro &lt;b&gt;, ținând buletinul în mână și site-ul WINBET.RO vizibil în fundal. &lt;br&gt;&lt;br&gt;";
-          break;
-      case "option4":
-        template = "<center> &lt;center&gt; Vă rugăm să retrageți  &lt;/b&gt; întregul câștig obținut din bonus &lt;/b&gt; În caz contrar,  &lt;/b&gt;orice sumă rămasă pe cont  &lt;/b&gt; obținută din bonus va fi  &lt;/b&gt; anulată &lt;/b&gt; conform Termenilor și Condițiilor.";
-          break;
+        case "option1":
+            template = "<center> &lt;center&gt; Verificarea identității nu a fost finalizată. Vă rugăm reîncărcați poza CI și o poză de tip selfie în care să țineți CI în dreptul feței. Aveți grijă ca toate detaliile de pe CI, cât și fața dumneavoastră să fie complet vizibile.  &lt;br&gt;&lt;br&gt; ";
+            break;
+        case "option2":
+            template = "<center> &lt;center&gt; Vă rugăm să încărcați o factură de utilități nu mai veche de 3 luni pe care să fie vizibilă adresa dumneavoastră din buletin.   &lt;br&gt;&lt;br&gt;";
+            break;
+        case "option3":
+            template = "<center> &lt;center&gt; Vă rugăm să ne trimiteți un video de cel putin 10 secunde la &lt;b&gt; contact@winbet.ro &lt;b&gt;, ținând buletinul în mână și site-ul WINBET.RO vizibil în fundal. &lt;br&gt;&lt;br&gt;";
+            break;
+        case "option4":
+            template = "<center> &lt;center&gt; Vă rugăm să retrageți  &lt;/b&gt; întregul câștig obținut din bonus &lt;/b&gt; În caz contrar,  &lt;/b&gt;orice sumă rămasă pe cont  &lt;/b&gt; obținută din bonus va fi  &lt;/b&gt; anulată &lt;/b&gt; conform Termenilor și Condițiilor.";
+            break;
         default:
-          template = "Invalid option selected";
-      }
-    
-      messageStack.push(template);
-      renderAllMessages();
+            template = "Invalid option selected";
     }
 
+    messageStack.push(template);
+    renderAllMessages();
+}
 
 
 

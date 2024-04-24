@@ -1,12 +1,12 @@
 body {
-  margin: 0;
+  /* margin: 0; */
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background: #333333;
-  /* color: white; */
+  background:#0F0F0F; 
+  
 }
 
 .container
@@ -24,15 +24,12 @@ body {
 }
 
 .box {
-  /* background-color: #771011;
-   */
-   /* background-color: black;
-   */
-   background-color: #013220;
+ 
+    background-color: #262626;
   width: calc(33.33% - 10px); /* Adjust box width and spacing */
-  height: 250px;
+  height: 280px;
   margin-bottom: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
   border-radius: 10px;
  
 
@@ -43,20 +40,7 @@ h3{
   text-align: center;
 }
 
-input[type="text"] {
-  width: 5em;
- text-align: center;
-  
-  outline: 0;
-  border: 0;
-  border-bottom: 2px solid #999999;
-  padding: 10px 0;
-  background:transparent;
-  font-size: 1em;
-  color:#ffffff;
-  transition: 0.3s ease;
-  /* height: 40px; */
-}
+
 
 
   .output {
@@ -67,41 +51,72 @@ input[type="text"] {
     text-align: center;
     border-radius: 10px;
     color: white;
-  }
+    padding-top: 20px;
 
-  /* .top{
-    height: 100px;
-    width: 100%;
-    
-  } */
-
-
-  .fixed{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%; /* Adjust container width as needed */
-    margin: 10px 20px;
-    text-align: center;
-    margin-top: 30px;
-    
   }
 
 
 
-  .button {
-    display: inline-block;
-    padding: 5px 10px;
-    background-color: #666b6d; /* Button color */
-    color: #ffffff; /* Text color */
-    text-align: center;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.button{
+  background-color: #222;
+  color: #fff;
+  border: 2px solid #333;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 14;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px #000;
+  transition: background-color 0.3s ease;
+  
 }
 
 .button:hover {
-    background-color: #913232; /* Darker color on hover */
+  background-color: #913232; 
+  /* background-color: #333; */
+  color: #fff;
+}
+
+
+  /* Dropdown container styles */
+  .fixed {
+    background-color: #0F0F0F;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+ /* Dropdown button styles */
+ .dropdown-button {
+  background-color: #262626;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 45%; 
+  text-align: center;
+}
+
+/* Dropdown content styles (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Dropdown content options styles */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Show dropdown content when dropdown button is hovered over */
+.fixed:hover .dropdown-content {
+  display: block;
 }
