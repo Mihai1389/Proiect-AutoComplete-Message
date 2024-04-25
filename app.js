@@ -82,46 +82,38 @@ function otherDocuments() {
 
 
 
+function cardHolder(){
+  // Get the value of the input with ID "inputCard"
+  let input = document.getElementById("inputCard").value.trim(); // Trim whitespace
 
+  let errors = []; 
 
-function eWalletHolder(){
-    let dropdown = document.getElementById("dropdown");
-    let selectOption = dropdown.options[dropdown.selectedIndex].value;
-    let inputValue = document.getElementById("mail_wallet").value;
-
-    let errors = []; 
-
- 
-    if (!validateDropdown(selectOption)) {
-      errors.push("Please select a valid option from the E-wallet");
-    }
+  if (!validateInput(input)) {
+    errors.push("Please enter a valid card");
+  }
   
+  if (errors.length > 0) {
     
-    if (!validateInput(inputValue)) {
-      errors.push("Please enter a valid E-mail");
-    }
-  
-    if (errors.length > 0) {
-      
-      alert("E-wallet Non-Holder:\n" + errors.join("\n"));
-      return; 
-    }
-  
-    let template = `
-    <center> &lt;center&gt; Va rugam incarcati o captura de ecran din contul de  ` + selectOption +": " + input + ` &lt;br&gt;&lt;br&gt;. <br> <br> Pe captura de ecran trebuie sa fie vizibile <b>numele titularului contului si adresa de e-mail - ${input}. &lt;br&gt;&lt;br&gt;`;
+    alert("Holder Card:\n" + errors.join("\n"));
+    return; 
+  }
+  let template =  `
+  <center>&lt;center&gt;Vă rugăm să încărcați poze față-verso ale cardului cu ultimele cifre  &lt;/b&gt;<b> ${input}</b>&lt;/b&gt;. &lt;br&gt;&lt;br&gt;<br><br>Pe poza față trebuie să fie vizibile <b> primele 6 si ultimele 4 cifre ale numărului cardului, data de expirare si numele titularului</b>, iar pe spate trebuie să fie <b>acoperit CVV-ul</b>.&lt;br&gt;&lt;br&gt;`;
 
-    messageStack.push(template);
-    renderAllMessages();
+
+  messageStack.push(template);
+  renderAllMessages();
 }
 
 
+
 function bankStatemant(){
-  let inputCard = document.getElementById("inputCard").value.trim();
+  let input = document.getElementById("inputCard").value.trim();
 
 
   let errors = []; 
 
-  if (!validateInput(inputCard)) {
+  if (!validateInput(input)) {
     errors.push("Please enter a valid card");
   }
   
@@ -139,28 +131,7 @@ function bankStatemant(){
   renderAllMessages();
 };
 
-function cardHolder(){
-  // Get the value of the input with ID "inputCard"
-  let inputCard = document.getElementById("inputCard").value.trim(); // Trim whitespace
 
-  let errors = []; 
-
-  if (!validateInput(inputCard)) {
-    errors.push("Please enter a valid card");
-  }
-  
-  if (errors.length > 0) {
-    
-    alert("Holder Card:\n" + errors.join("\n"));
-    return; 
-  }
-  let template =  `
-  <center>&lt;center&gt;Vă rugăm să încărcați poze față-verso ale cardului cu ultimele cifre  &lt;/b&gt;<b> ${input}</b>&lt;/b&gt;. &lt;br&gt;&lt;br&gt;<br><br>Pe poza față trebuie să fie vizibile <b> primele 6 si ultimele 4 cifre ale numărului cardului, data de expirare si numele titularului</b>, iar pe spate trebuie să fie <b>acoperit CVV-ul</b>.&lt;br&gt;&lt;br&gt;`;
-
-
-  messageStack.push(template);
-  renderAllMessages();
-}
 
 
 
@@ -271,72 +242,41 @@ renderAllMessages();
 
 
 
-function renderAllMessages() {
-  // Render all messages in the stack to the output div
-  document.querySelector(".output").innerHTML = messageStack.join("<br><br>");
-}
-
-// Validation function
-function validateInput(input) {
-  // Check if the input is empty
-  return input !== "";
-}
 
 
 
 
 
 
+function eWalletHolder(){
+  let dropdown = document.getElementById("dropdown");
+  let selectOption = dropdown.options[dropdown.selectedIndex].value;
+  let input = document.getElementById("mail_wallet").value;
 
-  function calculationTax(){
-    let taxOff = document.getElementById("taxOff").value;
-    let limit = document.getElementById("limit").value;
-    let sum = document.getElementById("sumCont").value;
-
-    let calc  = ((taxOff * 100) /97) + (sum - limit);
-    let debited = calc.toFixed(2);
-    template =  `  <center>Limita maximă de retragere din oferta jucată este de <b>${limit} RON </b>. <br><br>Suma disponibilă pentru retragere a fost returnată în contul de jucător, iar suma de <b>${debited} RON </b> a fost anulată conform Termenilor și Condițiilor.&lt;br&gt;&lt;br&gt;`
-    
-    messageStack.push(template);
-    renderAllMessages();
-
-}; 
-
-function copyContent() {
-    let contentDiv = document.getElementById("output");
-    let range = document.createRange();
-    range.selectNode(contentDiv);
-    window.getSelection().removeAllRanges(); // Clear current selection
-    window.getSelection().addRange(range); // Select the content
-    document.execCommand("copy"); // Copy the selected content
-    window.getSelection().removeAllRanges(); // Clear the selection again
-    // alert("Content copied!");
-    location.reload();
-  };
+  let errors = []; 
 
 
-
-function deposit(){
-  let input = document.getElementById("deposit").value;
-
-  // Validate the input
-  if (!validateInput(input)) {
-    // If input is empty, display an alert
-    alert("Deposit: Input Suma card is empty");
-    return; // Return from the function, don't proceed further
-}
-
-
-  let template = `
-  <center>&lt;center&gt;<center>Pentru retragerea câștigurilor din oferta jucată este necesară o depunere de <b>${input} RON</b>, efectuată în ziua retragerii, după activarea bonusului. &lt;br&gt;`;
+  if (!validateDropdown(selectOption)) {
+    errors.push("Please select a valid option from the E-wallet");
+  }
 
   
+  if (!validateInput(input)) {
+    errors.push("Please enter a valid E-mail");
+  }
+
+  if (errors.length > 0) {
+    
+    alert("E-wallet Non-Holder:\n" + errors.join("\n"));
+    return; 
+  }
+
+  let template = `
+  <center> &lt;center&gt; Va rugam incarcati o captura de ecran din contul de   ${selectOption } :  ${input}  &lt;br&gt;&lt;br&gt;. <br> <br> Pe captura de ecran trebuie sa fie vizibile <b>numele titularului contului si adresa de e-mail - ${input}. &lt;br&gt;&lt;br&gt;`;
+
   messageStack.push(template);
   renderAllMessages();
-};
-
-
-
+}
 
 
 function nonHolderEWallet() {
@@ -372,7 +312,7 @@ function nonHolderEWallet() {
   let template = `
   <center>Vă rugăm să încărcați o captură de ecran din contul de ${selectOption} <b>${inputValue}</b>, precum și poza buletinului d-lui/d-nei <b>${inputName}</b> și o declarație pe propria răspundere a acestuia.
   <br><br>
-  Declarația trebuie făcută după modelul: “<b>${inputName}, deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de Paysafe/Neteller/Skrill cu adresa de e-mail ... către Winbet.ro</b>”.&lt;br&gt;&lt;br&gt;
+  Declarația trebuie făcută după modelul: “<b>${inputName}, deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de ${selectOption} cu adresa de e-mail: ${inputValue} către Winbet.ro</b>”.&lt;br&gt;&lt;br&gt;
   <br><br>
   Declarația trebuie să fie datată și semnată.&lt;br&gt;&lt;br&gt;
   `;
@@ -455,6 +395,70 @@ let  template = `Va rugam incarcati pozele buletinului titularului contului de $
 messageStack.push(template);
 renderAllMessages();
 }
+
+
+
+  function calculationTax(){
+    let taxOff = document.getElementById("taxOff").value;
+    let limit = document.getElementById("limit").value;
+    let sum = document.getElementById("sumCont").value;
+
+    let calc  = ((taxOff * 100) /97) + (sum - limit);
+    let debited = calc.toFixed(2);
+    template =  `  <center>Limita maximă de retragere din oferta jucată este de <b>${limit} RON </b>. <br><br>Suma disponibilă pentru retragere a fost returnată în contul de jucător, iar suma de <b>${debited} RON </b> a fost anulată conform Termenilor și Condițiilor.&lt;br&gt;&lt;br&gt;`
+    
+    messageStack.push(template);
+    renderAllMessages();
+
+}; 
+
+
+function deposit(){
+  let input = document.getElementById("deposit").value;
+
+  // Validate the input
+  if (!validateInput(input)) {
+    // If input is empty, display an alert
+    alert("Deposit: Input Suma card is empty");
+    return; // Return from the function, don't proceed further
+}
+
+
+  let template = `
+  <center>&lt;center&gt;Pentru retragerea câștigurilor din oferta jucată este necesară o depunere de <b>${input} RON</b>, efectuată în ziua retragerii, după activarea bonusului. &lt;br&gt;`;
+
+  
+  messageStack.push(template);
+  renderAllMessages();
+};
+
+function renderAllMessages() {
+  // Render all messages in the stack to the output div
+  document.querySelector(".output").innerHTML = messageStack.join("<br><br>");
+}
+
+// Validation function
+function validateInput(input) {
+  // Check if the input is empty
+  return input !== "";
+}
+
+
+
+
+function copyContent() {
+    let contentDiv = document.getElementById("output");
+    let range = document.createRange();
+    range.selectNode(contentDiv);
+    window.getSelection().removeAllRanges(); // Clear current selection
+    window.getSelection().addRange(range); // Select the content
+    document.execCommand("copy"); // Copy the selected content
+    window.getSelection().removeAllRanges(); // Clear the selection again
+    // alert("Content copied!");
+    location.reload();
+  };
+
+
 
 
   function undoLastMessage() {

@@ -86,14 +86,14 @@ h3{
     
 }
  /* Dropdown button styles */
- .dropdown-button {
+ .dropdown-button{
   background-color: #262626;
   color: white;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
   border-radius: 8px;
-  width: 45%; 
+  width: 45%;   
   text-align: center;
 }
 
@@ -119,4 +119,21 @@ h3{
 /* Show dropdown content when dropdown button is hovered over */
 .fixed:hover .dropdown-content {
   display: block;
+}
+
+input{
+  text-align: center;
+  /* background-color: transparent; */
+  color: red;
+  width: 80px;
+  margin-bottom: 10px;
+}            
+
+.dropdown-button#dropdown,
+.dropdown-button#dropDownNonHolder{
+  width: 120px;
+  text: center;
+  /* border: 2px solir white; */
+  /* background-color: red; */
+  border: 1px solid white; 
 }
