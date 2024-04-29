@@ -72,6 +72,9 @@ function otherDocuments() {
         case "option4":
             template = "<center> &lt;center&gt; Vă rugăm să retrageți  &lt;/b&gt; întregul câștig obținut din bonus &lt;/b&gt; În caz contrar,  &lt;/b&gt;orice sumă rămasă pe cont  &lt;/b&gt; obținută din bonus va fi  &lt;/b&gt; anulată &lt;/b&gt; conform Termenilor și Condițiilor.";
             break;
+        case "option5":
+            template = "<center>&lt;center&gt;Vă rugăm încărcați &lt;b&gt;<b>o poză validă a cărții dumneavoastră de identitate</b> &lt;/b&gt;. Aveți grijă ca toate detaliile de pe CI să fie complet vizibile.&lt;br&gt;&lt;br&gt;<br><br>";
+            break;   
         default:
             template = "Invalid option selected";
     }
@@ -272,7 +275,7 @@ function eWalletHolder(){
   }
 
   let template = `
-  <center> &lt;center&gt; Va rugam incarcati o captura de ecran din contul de   ${selectOption } :  ${input}  &lt;br&gt;&lt;br&gt;. <br> <br> Pe captura de ecran trebuie sa fie vizibile <b>numele titularului contului si adresa de e-mail - ${input}. &lt;br&gt;&lt;br&gt;`;
+  <center>  &lt;center&gt; Va rugam incarcati o captura de ecran din contul de   ${selectOption } :  ${input}  &lt;br&gt;&lt;br&gt;. <br> <br> Pe captura de ecran trebuie sa fie vizibile <b>numele titularului contului si adresa de e-mail - ${input}. &lt;br&gt;&lt;br&gt;`;
 
   messageStack.push(template);
   renderAllMessages();
@@ -399,13 +402,14 @@ renderAllMessages();
 
 
   function calculationTax(){
-    let taxOff = document.getElementById("taxOff").value;
+    let taxOff = document.getElementById("taxOff").value.trim().replace(/\s/g, '');
     let limit = document.getElementById("limit").value;
     let sum = document.getElementById("sumCont").value;
 
+
     let calc  = ((taxOff * 100) /97) + (sum - limit);
     let debited = calc.toFixed(2);
-    template =  `  <center>Limita maximă de retragere din oferta jucată este de <b>${limit} RON </b>. <br><br>Suma disponibilă pentru retragere a fost returnată în contul de jucător, iar suma de <b>${debited} RON </b> a fost anulată conform Termenilor și Condițiilor.&lt;br&gt;&lt;br&gt;`
+    template =  `  <center>&lt;center&gt;Limita maximă de retragere din oferta jucată este de <b>${limit} RON </b> .&lt;br&gt;&lt;br&gt; <br><br>Suma disponibilă pentru retragere a fost returnată în contul de jucător, iar suma de <b>${debited} RON </b> a fost anulată conform Termenilor și Condițiilor. &lt;br&gt;&lt;br&gt;`
     
     messageStack.push(template);
     renderAllMessages();
@@ -483,3 +487,5 @@ function validateInput(input) {
 function validateDropdown(option) {
   return ["Paysafe", "Skrill", "Netter"].includes(option);
 }
+
+

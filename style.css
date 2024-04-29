@@ -18,6 +18,7 @@ body {
   margin: 10px 20px;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  margin: 20px
 
   
   
@@ -27,7 +28,7 @@ body {
  
     background-color: #262626;
   width: calc(33.33% - 10px); /* Adjust box width and spacing */
-  height: 280px;
+  height: auto;
   margin-bottom: 20px;
   padding-bottom: 15px;
   border-radius: 10px;
@@ -46,13 +47,14 @@ h3{
   .output {
     background-color:#6F635B ; 
     width: 100%; 
-    height: 600px; 
+    min-height: 600px;
+    max-height: auto;
     margin: 20px 100px;
     text-align: center;
     border-radius: 10px;
     color: white;
     padding-top: 20px;
-
+    overflow: auto;
   }
 
 
@@ -123,11 +125,15 @@ h3{
 
 input{
   text-align: center;
-  /* background-color: transparent; */
+  
   color: red;
   width: 80px;
   margin-bottom: 10px;
-}            
+  border-radius: 50px;
+height: 35px;
+width: 100px;
+}
+            
 
 .dropdown-button#dropdown,
 .dropdown-button#dropDownNonHolder{
@@ -137,3 +143,45 @@ input{
   /* background-color: red; */
   border: 1px solid white; 
 }
+
+
+
+
+
+.h1{
+  color: red;
+}
+
+
+/* ------------------------ */
+
+.winbet {
+  /* position: fixed; */
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #0F0F0F;
+  display: flex;
+justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  
+}
+
+.winbet {
+  color: red;
+  
+}
+
+footer {
+  background-color: #0F0F0F; /* Dark background color */
+  color: white; /* White text color */
+  padding: 10px;
+  text-align: center ; /* Center-align text */
+  height: 100px;
+  width: 100%; /* Full width */
+  
+}
+
+
+
