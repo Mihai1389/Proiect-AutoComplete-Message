@@ -201,7 +201,7 @@ function nonHolderCard(){
 
   &lt;br&gt;&lt;br&gt;<br><br>
   
-  Declarația trebuie făcută după modelul: “<b> &lt;b&gt;  Subsemnatul ${inputName} deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe cardul cu ultimele cifre "${inputCard}" către Winbet.ro.  &lt;/b&gt;  </b>”. Pe declarația trebuie să se regăsească data și semnătura.
+  Declarația trebuie făcută după modelul: “<b> &lt;b&gt;  Subsemnatul ${inputName} deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe cardul cu ultimele cifre "${inputCard}" către Winbet.ro.  &lt;/b&gt;  </b>”. Pe declarație trebuie să se regăsească data și semnătura.
   
   &lt;br&gt;&lt;br&gt;<br><br>
   
@@ -238,7 +238,7 @@ if (errors.length > 0) {
 let  template = `
 <center> &lt;center&gt; Declarația trebuie făcută după modelul: “<b>Subsemnatul ${inputName} deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe cardul cu ultimele cifre "${inputCard}" către Winbet.ro</b>”. &lt;br&gt &lt;br&gt <br><br>
   
-  Pe declarația trebuie să se regăsească  datata și semnata.`
+  Pe declarație trebuie să se regăsească data și semnatura.`
 
 messageStack.push(template);
 renderAllMessages();
