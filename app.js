@@ -67,7 +67,7 @@ function otherDocuments() {
             template = "<center> &lt;center&gt; Vă rugăm să încărcați o factură de utilități nu mai veche de 3 luni pe care să fie vizibilă adresa dumneavoastră din buletin.   ";
             break;
         case "option3":
-            template = "<center> &lt;center&gt; Vă rugăm să ne trimiteți un video de cel putin 10 secunde la &lt;b&gt; contact@winbet.ro &lt;b&gt;, ținând buletinul în mână și site-ul WINBET.RO vizibil în fundal. ";
+            template = "<center> &lt;center&gt; Vă rugăm să ne trimiteți un video de cel putin 10 secunde la &lt;b&gt; contact@Vivabet.ro &lt;b&gt;, ținând buletinul în mână și site-ul Vivabet.RO vizibil în fundal. ";
             break;
         case "option4":
             template = "<center> &lt;center&gt; Vă rugăm să retrageți  &lt;/b&gt; întregul câștig obținut din bonus &lt;/b&gt; În caz contrar,  &lt;/b&gt;orice sumă rămasă pe cont  &lt;/b&gt; obținută din bonus va fi  &lt;/b&gt; anulată &lt;/b&gt; conform Termenilor și Condițiilor.";
@@ -102,9 +102,8 @@ function cardHolder(){
   }
   let template =  `
   <center>&lt;center&gt;Vă rugăm să încărcați poze față-verso ale cardului cu ultimele cifre 
-   &lt;/b&gt;<b> ${input}</b>&lt;/b&gt;. <br><br>Pe poza față trebuie să fie vizibile   <b> &lt;b&gt; primele 6 si 
-   ultimele 4 cifre ale numărului cardului, data de expirare si numele titularului &lt;/b&gt; </b> , iar pe spate trebuie să fie 
-    <b> &lt;b&gt;  acoperit CVV-ul &lt;/b&gt; </b>`;
+  &lt;/b&gt;<b> ${input}</b>&lt;/b&gt;.&lt;br&gt;&lt;br&gt; <br><br>Pe poza față trebuie să fie vizibile   <b> &lt;b&gt; primele 6 si ultimele 4 cifre ale numărului cardului, data de expirare si numele titularului &lt;/b&gt; </b> , iar pe spate trebuie să fie 
+   <b> &lt;b&gt;  acoperit CVV-ul. &lt;/b&gt; </b>`
 
 
   messageStack.push(template);
@@ -130,7 +129,7 @@ function bankStatemant(){
   }
 
   let template = `
-  <center>&lt;center&gt;Vă rugăm să încărcați un extras de cont pentru cardul cu ultimele cifre<b> &lt;b&gt; ${input} &lt;b&gt;</b> pe care să fie vizibile numele dumneavoastră complet, numărul de card și o tranzacție făcută către WINBET.`;
+  <center>&lt;center&gt;Vă rugăm să încărcați un extras de cont pentru cardul cu ultimele cifre<b> &lt;b&gt; ${input} &lt;b&gt;</b> pe care să fie vizibile numele dumneavoastră complet, numărul de card și o tranzacție făcută către Vivabet.`;
 
   
   messageStack.push(template);
@@ -168,15 +167,15 @@ function nonHolderCard(){
   
   
   // If inputs are not empty, proceed with adding the message to the stack
-  let template =  ` <center>&lt;center&gt;Vă rugăm să încărcați pozele față-verso ale cardului cu ultimele cifre <b>${inputCard}</b>, precum și poza buletinului d-lui/d-nei <b>${inputName}</b> și o declarație pe propria răspundere a acestuia.
+  let template =  ` <center> &lt;center&gt; Vă rugăm să încărcați pozele față-verso ale cardului cu ultimele cifre <b> &lt;b&gt; ${inputCard} &lt;/b&gt;  </b>, precum și poza buletinului d-lui/d-nei <b> &lt;b&gt;  ${inputName} &lt;/b&gt;  </b> și o declarație pe propria răspundere a acestuia.
 
   &lt;br&gt;&lt;br&gt;<br><br>
   
-  Declarația trebuie făcută după modelul: “<b>Subsemnatul ${inputName} deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe cardul cu ultimele cifre "${inputCard}" către Winbet.ro</b>”. Declarația trebuie să fie datată și semnată.
+  Declarația trebuie făcută după modelul: “<b> &lt;b&gt;  Subsemnatul ${inputName} deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe cardul cu ultimele cifre "${inputCard}" către Vivabet.ro.  &lt;/b&gt;  </b>”. Pe declarația trebuie să se regăsească datata și semnata.
   
   &lt;br&gt;&lt;br&gt;<br><br>
   
-  Vă reamintim că retragerile pot fi efectuate doar pe metode ce vă aparțin.
+  <b> &lt;b&gt;  Vă reamintim că retragerile pot fi efectuate doar pe metode ce vă aparțin. &lt;/b&gt;  </b>
          
       `;
 
@@ -207,7 +206,9 @@ if (errors.length > 0) {
 }
 
 let  template = `
-Declarația trebuie făcută după modelul: “<b>Subsemnatul ${inputName} deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe cardul cu ultimele cifre "${inputCard}" către Winbet.ro</b>”. Declarația trebuie să fie datată și semnată.`
+<center> &lt;center&gt; Declarația trebuie făcută după modelul: “<b>Subsemnatul ${inputName} deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe cardul cu ultimele cifre "${inputCard}" către Vivabet.ro</b>”. &lt;br&gt &lt;br&gt <br><br>
+  
+  Pe declarația trebuie să se regăsească  datata și semnata.`
 
 messageStack.push(template);
 renderAllMessages();
@@ -237,7 +238,7 @@ if (errors.length > 0) {
 
 
 
-let  template = `Va rugam incarcati pozele buletinului titularului cardului cu ultimele cifre &lt;/b&gt;<b>${inputCard} - ${inputName}</b>&lt;/b&gt;`
+let  template = ` <center> &lt;center&gt;  Vă rugam încarcați pozele buletinului titularului cardului cu ultimele cifre <b> &lt;/b&gt;  ${inputCard} - ${inputName} &lt;/b&gt;</b>.`
 
 messageStack.push(template);
 renderAllMessages();
@@ -277,8 +278,10 @@ function eWalletHolder(){
     return; 
   }
 
-  let template = `
-  <center>  &lt;center&gt; Va rugam incarcati o captura de ecran din contul de   ${selectOption } :  ${input}  . <br> <br> Pe captura de ecran trebuie sa fie vizibile <b>numele titularului contului si adresa de e-mail - ${input}. `;
+  let template = ` <center>  &lt;center&gt; Va rugam incarcati o captura de ecran din contul de  <b> &lt;b&gt;  ${selectOption } :  ${input}  . &lt;/b&gt; </b> &lt;br&gt;&lt;br&gt;
+  <br><br> Pe captura de ecran trebuie sa fie vizibile <b> &lt;b&gt;  numele titularului contului si adresa de e-mail - ${input}. &lt;/b&gt; </b> `
+
+   ;
 
   messageStack.push(template);
   renderAllMessages();
@@ -316,11 +319,11 @@ function nonHolderEWallet() {
   }
 
   let template = `
-  <center>Vă rugăm să încărcați o captură de ecran din contul de ${selectOption} <b>${inputValue}</b>, precum și poza buletinului d-lui/d-nei <b>${inputName}</b> și o declarație pe propria răspundere a acestuia.
-  <br><br>
-  Declarația trebuie făcută după modelul: “<b>${inputName}, deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de ${selectOption} cu adresa de e-mail: ${inputValue} către Winbet.ro</b>”.
-  <br><br>
-  Declarația trebuie să fie datată și semnată.
+  <center> &lt;center&gt; Vă rugăm să încărcați o captură de ecran din contul de ${selectOption} <b>&lt;b&gt; ${inputValue} &lt;/b&gt;  </b>, precum și poza buletinului d-lui/d-nei <b> &lt;b&gt;  ${inputName} &lt;/b&gt;  </b> și o declarație pe propria răspundere a acestuia.
+  &lt;br&gt;&lt;br&gt;<br><br>
+  Declarația trebuie făcută după modelul: “<b> &lt;b&gt; ${inputName}, deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de ${selectOption} cu adresa de e-mail: ${inputValue} către Vivabet.ro &lt;/b&gt;  </b>”.
+  &lt;br&gt;&lt;br&gt;<br><br>
+  Pe declarația trebuie să se regăsească datata și semnata.
   `;
 
   messageStack.push(template);
@@ -360,8 +363,7 @@ function declarationEwalletBelong(){
     return;
   }
 
-  let template = `  Vă rugăm  încărcați declarația   după modelul: “<b>${inputName} , deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de ${selectOption} cu adresa de e-mail ${inputValue} către Winbet.ro</b>”.`;
-
+  let template = ` <center> &lt;center&gt; Vă rugăm  încărcați declarația   după modelul: “<b> &lt;b&gt; ${inputName} , deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de ${selectOption} cu adresa de e-mail ${inputValue} către Vivabet.ro. &lt;/b&gt;  </b>” ` 
   messageStack.push(template);
   renderAllMessages();
 }
@@ -396,7 +398,7 @@ function additionalIDwallet(){
   }
 
 
-let  template = `Va rugam incarcati pozele buletinului titularului contului de ${selectOption} asociat adresei de <b>&lt;/b&gt; e-mail:${inputValue} - ${inputName}</b>&lt;/b&gt; `
+let  template = `<center> &lt;center&gt; Va rugam incarcati pozele buletinului titularului contului de <b> &lt;b&gt; ${selectOption} &lt;/b&gt; </b>asociat adresei de <b>&lt;/b&gt; e-mail:${inputValue} - ${inputName} &lt;/b&gt</b> `
 
 messageStack.push(template);
 renderAllMessages();
@@ -412,7 +414,7 @@ renderAllMessages();
 
     let calc  = ((taxOff * 100) /97) + (sum - limit);
     let debited = calc.toFixed(2);
-    template =  `  <center>&lt;center&gt;Limita maximă de retragere din oferta jucată este de <b>${limit} RON </b> . <br><br>Suma disponibilă pentru retragere a fost returnată în contul de jucător, iar suma de <b>${debited} RON </b> a fost anulată conform Termenilor și Condițiilor. `
+    template =  `  <center>&lt;center&gt;Limita maximă de retragere din oferta jucată este de <b> &lt;b&gt; ${limit} RON &lt;/b&gt; </b> .&lt;br&gt;&lt;br&gt; <br><br>Suma disponibilă pentru retragere a fost returnată în contul de jucător, iar suma de <b> &lt;b&gt;  ${debited} RON &lt;/b&gt; </b> a fost anulată conform <b> &lt;b&gt; Termenilor și Condițiilor.  &lt;/b&gt;  </b>`
     
     messageStack.push(template);
     renderAllMessages();
@@ -432,7 +434,7 @@ function deposit(){
 
 
   let template = `
-  <center>&lt;center&gt;Pentru retragerea câștigurilor din oferta jucată este necesară o depunere de <b>${input} RON</b>, efectuată în ziua retragerii, după activarea bonusului. ;`;
+  <center>&lt;center&gt;Pentru retragerea câștigurilor din oferta jucată este necesară o depunere de <b> &lt;b&gt; ${input} RON &lt;/b&gt; </b>, efectuată în ziua retragerii, <b> &lt;b&gt; după activarea bonusului. &lt;/b&gt;  </b>`
 
   
   messageStack.push(template);
