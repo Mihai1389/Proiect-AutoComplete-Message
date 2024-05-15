@@ -68,14 +68,15 @@ h3{
   font-size: 14;
   cursor: pointer;
   box-shadow: 2px 2px 2px #000;
-  transition: background-color 0.3s ease;
+  /* transition: background-color 0.3s ease; */
+  transition: transform 0.3s ease;
   
 }
 
 .button:hover {
-  background-color: #913232; 
-  /* background-color: #333; */
-  color: #fff;
+  background-color: ##3A3A40; 
+  transform: scale(1.1); /* Zoom in effect */
+  
 }
 
 
@@ -91,12 +92,13 @@ h3{
  .dropdown-button{
   background-color: #262626;
   color: white;
-  padding: 10px 20px;
-  border: none;
+  
+  border: 1px solid white;
   cursor: pointer;
   border-radius: 8px;
-  width: 45%;   
+  width: auto;   
   text-align: center;
+  margin-right: 20px;
 }
 
 /* Dropdown content styles (hidden by default) */
@@ -121,57 +123,41 @@ h3{
 /* Show dropdown content when dropdown button is hovered over */
 .fixed:hover .dropdown-content {
   display: block;
+  
 }
 
 input{
   text-align: center;
-  
   color: red;
   width: 80px;
   margin-bottom: 10px;
   border-radius: 50px;
-height: 35px;
-width: 100px;
+  height: 35px;
+  width: 100px;
+  transition: transform 0.3s ease;
 }
             
+input:hover {
+  color: black; /* Change text color to black */
+  background-color: white; /* Change background color to white */
+  transform: scale(1.1); /* Zoom in effect */
+}
+
 
 .dropdown-button#dropdown,
 .dropdown-button#dropDownNonHolder{
   width: 120px;
   text: center;
-  /* border: 2px solir white; */
-  /* background-color: red; */
   border: 1px solid white; 
 }
 
 
-
-
-
-.h1{
-  color: red;
+.dropdown-button:hover {
+  color: white;
+  background-color: #3A3A40;
 }
 
 
-/* ------------------------ */
-
-.winbet {
-  /* position: fixed; */
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  background-color: #0F0F0F;
-  display: flex;
-justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-  
-}
-
-.winbet {
-  color: red;
-  
-}
 
 footer {
   background-color: #0F0F0F; /* Dark background color */
@@ -183,5 +169,23 @@ footer {
   
 }
 
-
+.customContainer{
+  background-color: transparent ; 
+  width: 100%; 
+  /* margin: 20px 100px; */
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+  padding-top: 20px;
+  overflow: auto;
+}
+  
+input.customMessage {
+  min-width: 300px;
+  max-width: 600px;
+  max-height: 500px;
+  width: auto;
+  overflow: auto;
+  margin: 20px;
+}
 

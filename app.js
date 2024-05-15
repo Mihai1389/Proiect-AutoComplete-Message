@@ -29,21 +29,24 @@ function identityConfirmation() {
             template = " <center> &lt;center&gt; Datele de pe document nu sunt complet vizibile. Vă rugăm să refaceți poza astfel incât aceasta sa fie color, toate datele să fie clar vizibile, iar toate 4 laturile documentului să fie incluse în poză.  ";
             break;
         case "option6":
-            template = " <center> &lt;center&gt; Rezoluția documentului este prea mică. Vă rugăm să refaceti fotografia astfel încât aceasta să aibă o rezoluție mai mare.  ";
+            template = " <center> &lt;center&gt; Documentul nu este incadrat corespunzator. Va rugam refaceti poza documentului astfel incat toate laturile acestuia sa fie complet vizibile.";
             break;
         case "option7":
-            template = " <center> &lt;center&gt; Nu sunt acceptate capturi de ecran în vederea verificării documentelor. Vă rugăm să refaceți o poză documentului în original.  ";
+            template = " <center> &lt;center&gt; Rezoluția documentului este prea mică. Vă rugăm să refaceti fotografia astfel încât aceasta să aibă o rezoluție mai mare.  ";
             break;
         case "option8":
-            template = " <center> &lt;center&gt; Documentul este expirat. Vă rugăm să încărcați un document valid.  ";
+            template = " <center> &lt;center&gt; Nu sunt acceptate capturi de ecran în vederea verificării documentelor. Vă rugăm să refaceți o poză documentului în original.  ";
             break;
         case "option9":
-            template = " <center> &lt;center&gt; Sunt acceptate doar documente emise în România. Vă rugăm să trimiteți poza unei cărți de identitate emisă în România sau poza față-verso a permisului de ședere.  ";
+            template = " <center> &lt;center&gt; Documentul este expirat. Vă rugăm să încărcați un document valid.  ";
             break;
         case "option10":
-            template = " <center> &lt;center&gt; Documentul nu este acceptat pentru verificare. Vă rugăm să trimiteți o poză a cărții dumneavoastră de identitate, a primelor două pagini ale pașaportului sau al permisului de ședere.  ";
+            template = " <center> &lt;center&gt; Sunt acceptate doar documente emise în România. Vă rugăm să trimiteți poza unei cărți de identitate emisă în România sau poza față-verso a permisului de ședere.  ";
             break;
         case "option11":
+            template = " <center> &lt;center&gt; Documentul nu este acceptat pentru verificare. Vă rugăm să trimiteți o poză a cărții dumneavoastră de identitate, a primelor două pagini ale pașaportului sau al permisului de ședere.  ";
+            break;
+        case "option12":
             template = " <center> &lt;center&gt; Vă rugăm să refaceți poza pașaportului astfel încât primele 2 pagini ale documentului sa fie vizibile în întregime în aceeași poză.  ";
             break;
         default:
@@ -64,18 +67,21 @@ function otherDocuments() {
             template = "<center> &lt;center&gt; Verificarea identității nu a fost finalizată. Vă rugăm reîncărcați poza CI și o poză de tip selfie în care să țineți CI în dreptul feței. Aveți grijă ca toate detaliile de pe CI, cât și fața dumneavoastră să fie complet vizibile.   ";
             break;
         case "option2":
-            template = "<center> &lt;center&gt; Vă rugăm să încărcați o factură de utilități nu mai veche de 3 luni pe care să fie vizibilă adresa dumneavoastră din buletin.   ";
+            template = "<center> &lt;center&gt;Verificarea identității nu a fost finalizată. Vă rugăm încărcați o poză de tip selfie în care să țineți CI în dreptul feței. Aveți grijă ca toate detaliile de pe CI, cât și fața dumneavoastră să fie complet vizibile.";
             break;
         case "option3":
-            template = "<center> &lt;center&gt; Vă rugăm să ne trimiteți un video de cel putin 10 secunde la &lt;b&gt; contact@Vivabet.ro &lt;b&gt;, ținând buletinul în mână și site-ul Vivabet.RO vizibil în fundal. ";
+            template = "<center> &lt;center&gt; Vă rugăm să ne trimiteți un video de cel putin 10 secunde la &lt;b&gt; contact@Winbet.ro &lt;b&gt;, ținând buletinul în mână și site-ul Winbet.RO vizibil în fundal. ";
             break;
         case "option4":
             template = "<center> &lt;center&gt; Vă rugăm să retrageți  &lt;/b&gt; întregul câștig obținut din bonus &lt;/b&gt; În caz contrar,  &lt;/b&gt;orice sumă rămasă pe cont  &lt;/b&gt; obținută din bonus va fi  &lt;/b&gt; anulată &lt;/b&gt; conform Termenilor și Condițiilor.";
             break;
         case "option5":
-            template = "<center>&lt;center&gt;Vă rugăm încărcați &lt;b&gt;<b>o poză validă a cărții dumneavoastră de identitate</b> &lt;/b&gt;. Aveți grijă ca toate detaliile de pe CI să fie complet vizibile.<br><br>";
-            break;   
-        default:
+            template = "<center>&lt;center&gt;Vă rugăm încărcați &lt;b&gt;<b>o poză validă a cărții dumneavoastră de identitate</b> &lt;/b&gt;. Aveți grijă ca toate detaliile de pe CI să fie complet vizibile.";
+            break;  
+        case "option6":
+            template = "<center>&lt;center&gt;Vă rugăm încărcați &lt;b&gt;<b>o poză validă a cărții dumneavoastră de identitate</b> &lt;/b&gt;. Aveți grijă ca toate detaliile de pe CI să fie complet vizibile.";
+              break;   
+          default: 
             template = "Invalid option selected";
     }
 
@@ -129,7 +135,7 @@ function bankStatemant(){
   }
 
   let template = `
-  <center>&lt;center&gt;Vă rugăm să încărcați un extras de cont pentru cardul cu ultimele cifre<b> &lt;b&gt; ${input} &lt;b&gt;</b> pe care să fie vizibile numele dumneavoastră complet, numărul de card și o tranzacție făcută către Vivabet.`;
+  <center>&lt;center&gt;Vă rugăm să încărcați un extras de cont pentru cardul cu ultimele cifre<b> &lt;b&gt; ${input} &lt;b&gt;</b> pe care să fie vizibile numele dumneavoastră complet, numărul de card și o tranzacție făcută către Winbet.`;
 
   
   messageStack.push(template);
@@ -171,7 +177,7 @@ function nonHolderCard(){
 
   &lt;br&gt;&lt;br&gt;<br><br>
   
-  Declarația trebuie făcută după modelul: “<b> &lt;b&gt;  Subsemnatul ${inputName} deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe cardul cu ultimele cifre "${inputCard}" către Vivabet.ro.  &lt;/b&gt;  </b>”. Pe declarația trebuie să se regăsească datata și semnata.
+  Declarația trebuie făcută după modelul: “<b> &lt;b&gt;  Subsemnatul ${inputName} deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe cardul cu ultimele cifre "${inputCard}" către Winbet.ro.  &lt;/b&gt;  </b>”. Pe declarația trebuie să se regăsească data și semnătura.
   
   &lt;br&gt;&lt;br&gt;<br><br>
   
@@ -206,7 +212,7 @@ if (errors.length > 0) {
 }
 
 let  template = `
-<center> &lt;center&gt; Declarația trebuie făcută după modelul: “<b>Subsemnatul ${inputName} deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe cardul cu ultimele cifre "${inputCard}" către Vivabet.ro</b>”. &lt;br&gt &lt;br&gt <br><br>
+<center> &lt;center&gt; Declarația trebuie făcută după modelul: “<b>Subsemnatul ${inputName} deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe cardul cu ultimele cifre "${inputCard}" către Winbet.ro</b>”. &lt;br&gt &lt;br&gt <br><br>
   
   Pe declarația trebuie să se regăsească  datata și semnata.`
 
@@ -321,9 +327,9 @@ function nonHolderEWallet() {
   let template = `
   <center> &lt;center&gt; Vă rugăm să încărcați o captură de ecran din contul de ${selectOption} <b>&lt;b&gt; ${inputValue} &lt;/b&gt;  </b>, precum și poza buletinului d-lui/d-nei <b> &lt;b&gt;  ${inputName} &lt;/b&gt;  </b> și o declarație pe propria răspundere a acestuia.
   &lt;br&gt;&lt;br&gt;<br><br>
-  Declarația trebuie făcută după modelul: “<b> &lt;b&gt; ${inputName}, deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de ${selectOption} cu adresa de e-mail: ${inputValue} către Vivabet.ro &lt;/b&gt;  </b>”.
+  Declarația trebuie făcută după modelul: “<b> &lt;b&gt; ${inputName}, deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de ${selectOption} cu adresa de e-mail: ${inputValue} către Winbet.ro &lt;/b&gt;  </b>”.
   &lt;br&gt;&lt;br&gt;<br><br>
-  Pe declarația trebuie să se regăsească datata și semnata.
+  Pe declarația trebuie să se regăsească data și semnătura.
   `;
 
   messageStack.push(template);
@@ -363,7 +369,7 @@ function declarationEwalletBelong(){
     return;
   }
 
-  let template = ` <center> &lt;center&gt; Vă rugăm  încărcați declarația   după modelul: “<b> &lt;b&gt; ${inputName} , deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de ${selectOption} cu adresa de e-mail ${inputValue} către Vivabet.ro. &lt;/b&gt;  </b>” ` 
+  let template = ` <center> &lt;center&gt; Vă rugăm  încărcați declarația   după modelul: “<b> &lt;b&gt; ${inputName} , deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de ${selectOption} cu adresa de e-mail ${inputValue} către Winbet.ro. &lt;/b&gt;  </b>” ` 
   messageStack.push(template);
   renderAllMessages();
 }
@@ -481,6 +487,7 @@ function copyContent() {
   function renderAllMessages() {
     // Render all messages in the stack to the output div
     document.getElementById("output").innerHTML = messageStack.join("&lt;br&gt; &lt;br&gt; <br><br>");
+    document.querySelector(".output").innerHTML = messageStack.join("&lt;br&gt; &lt;br&gt; <br><br>");
   }
 
 
@@ -493,4 +500,26 @@ function validateDropdown(option) {
   return ["Paysafe", "Skrill", "Netter"].includes(option);
 }
 
-
+function customMessage() {
+  // Get the input element
+  var inputElement = document.querySelector(".customMessage");
+  
+  // Get the value of the input
+  var message = inputElement.value;
+  
+  // Validate the input
+  if (!validateInput(message)) {
+      // If input is empty, display an alert
+      alert("Please enter your message  Custom message");
+      return; // Return from the function, don't proceed further
+  }
+  
+  // Push the message to the message stack
+  messageStack.push(message);
+  
+  // Render all messages in the stack
+  renderAllMessages();
+  
+  // Clear the input field
+  inputElement.value = "";
+}

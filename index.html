@@ -13,35 +13,37 @@
       </div> -->
 
 
+
+
 <div class="fixed">
-    <select class="dropdown-button" id="dropdownFixedMessages" onchange="identityConfirmation()">
-        <option disabled selected>Confirmarea identitatii</option>
+    <select class="dropdown-button" id="dropdownFixedMessages">
+        <option disabled selected>Confirm Identity</option>
         <option value="option1">Nume Incorect</option>
         <option value="option2">CNP Incorect</option>
         <option value="option3">Schimbarea numelui (casatorie/divort)</option>
         <option value="option4">Rezolutia documentului este prea mica</option>
         <option value="option5">Datele nu sunt complet vizibile</option>
-        <option value="option6">Rezolutia documentului este prea mica</option>
-        <option value="option7">Captura de ecran</option>
-        <option value="option8">Documentul este expirat.</option>
-        <option value="option9">Document invalid.</option>
-        <option value="option10">Documente emise in alte tari.</option>
-        <option value="option11">Poza pasaportului nu include ambele pagini.</option>
-    </select>
-    <select class="dropdown-button" id="dropdownOtherDoc" onchange="otherDocuments()">
-        <option disabled selected>Documente aditionale</option>
+        <option value="option6">Document incadrat necorespunzator</option>
+        <option value="option7">Rezolutia documentului este prea mica</option>
+        <option value="option8">Captura de ecran</option>
+        <option value="option9">Documentul este expirat.</option>
+        <option value="option10">Document invalid.</option>
+        <option value="option11">Documente emise in alte tari.</option>
+        <option value="option12">Poza pasaportului nu include ambele pagini.</option>
+    </select><button class="button" onclick="identityConfirmation()">Submit</button>
+</div>
+
+<div class="fixed">
+    <select class="dropdown-button" id="dropdownOtherDoc">
+        <option disabled selected>Other Documents</option>
         <option value="option1">Cerere selfie</option>
         <option value="option2">Cerere factura de utilitati</option>
         <option value="option3">Confirmare Video-Sport</option>
         <option value="option4">Retreagere unica</option>
         <option value="option5">Actualizare buletin</option>
-        <option value="optionx">Xxxx</option>
-    </select>
+        <option value="option6">Cerere selfie + CI </option>
+    </select><button class="button" onclick="otherDocuments()">Submit</button>
 </div>
-
-
-
-
 
 
 <div class="container">
@@ -81,8 +83,8 @@
         <input type="text" id="nameNonHolder" placeholder="Name">
         <button class = "button" onclick="nonHolderEWallet()">Generate E-wallet</button>
         <br><br>
-        <button class="button" onclick="declarationEwalletBelong()">Declaratie</button>
-        <button class="button" onclick="additionalIDwallet()">Additioanl</button>
+        <button class="button" onclick="declarationEwalletBelong()">Declaration</button>
+        <button class="button" onclick="additionalIDwallet()">Additional</button>
 </div>
 <div class= "box">
     <h3>Calculator Debitare</h3>
@@ -97,7 +99,10 @@
     
 </div>
 
-
+<div  class="customContainer" id="customContainer">
+    <input type="text" class="customMessage" placeholder="Custom message">
+    <button class="button" onclick="customMessage()">Submit</button>
+</div>
 
 </div>
 
@@ -108,7 +113,12 @@
 </div>
 
 
+
+
+
 <div  class="output" id="output"></div>
+
+
 
 <footer>
     <p>Author: Mihai Niculcea</p>
