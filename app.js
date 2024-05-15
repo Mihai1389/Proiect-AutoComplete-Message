@@ -393,7 +393,9 @@ function declarationEwalletBelong(){
     return;
   }
 
-  let template = ` <center> &lt;center&gt; Vă rugăm  încărcați declarația   după modelul: “<b> &lt;b&gt; ${inputName} , deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de ${selectOption} cu adresa de e-mail ${inputValue} către Winbet.ro. &lt;/b&gt;  </b>” ` 
+  let template = ` <center> &lt;center&gt; Vă rugăm  încărcați declarația   după modelul: “<b> &lt;b&gt; ${inputName} , deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de ${selectOption} cu adresa de e-mail ${inputValue} către Winbet.ro. &lt;/b&gt;  </b>”  &lt;br&gt; &lt;br&gt;<br> <br>
+
+  Pe declarație trebuie să se regăsească data și semnatura. ` 
   messageStack.push(template);
   renderAllMessages();
 }
