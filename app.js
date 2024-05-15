@@ -1,6 +1,6 @@
 
 // &lt;center&gt; - displat <center>
-// &lt;br&gt; - display <br>
+// ; - display <br>
 //  <b>&lt;b&gt; - <b>
 // &lt;/b&gt; </b> = </b>
 
@@ -14,37 +14,37 @@ function identityConfirmation() {
 
     switch(selectedOption) {
         case "option1":
-            template = "<center> &lt;center&gt; Numele din cont nu corespunde cu cel de pe document. Pentru actualizarea datelor dumneavoastră, vă rugăm să trimiteți o poză de tip selfie în care să țineți buletinul în dreptul feței.  &lt;br&gt;&lt;br&gt;";
+            template = "<center> &lt;center&gt; Numele din cont nu corespunde cu cel de pe document. Pentru actualizarea datelor dumneavoastră, vă rugăm să trimiteți o poză de tip selfie în care să țineți buletinul în dreptul feței.  ";
             break;
         case "option2":
-            template = " <center> &lt;center&gt; CNP-ul din cont nu corespunde cu cel din document. Vă rugăm să va creați un cont cu datele corecte. &lt;br&gt;&lt;br&gt; ";
+            template = " <center> &lt;center&gt; CNP-ul din cont nu corespunde cu cel din document. Vă rugăm să va creați un cont cu datele corecte.  ";
             break;
         case "option3":
-            template = " <center> &lt;center&gt; Datele de pe document nu corespund cu cele din cont. În cazul schimbării numelui, vă rugăm să încărcați poza certificatului de căsătorie/divorț. &lt;br&gt;&lt;br&gt;";
+            template = " <center> &lt;center&gt; Datele de pe document nu corespund cu cele din cont. În cazul schimbării numelui, vă rugăm să încărcați poza certificatului de căsătorie/divorț. ";
             break;
         case "option4":
-            template = " <center> &lt;center&gt; Rezoluția documentului este prea mică. Vă rugăm să refaceti fotografia astfel încât aceasta să aibă o rezoluție mai mare. &lt;br&gt;&lt;br&gt; ";
+            template = " <center> &lt;center&gt; Rezoluția documentului este prea mică. Vă rugăm să refaceti fotografia astfel încât aceasta să aibă o rezoluție mai mare.  ";
             break;
         case "option5":
-            template = " <center> &lt;center&gt; Datele de pe document nu sunt complet vizibile. Vă rugăm să refaceți poza astfel incât aceasta sa fie color, toate datele să fie clar vizibile, iar toate 4 laturile documentului să fie incluse în poză. &lt;br&gt;&lt;br&gt; ";
+            template = " <center> &lt;center&gt; Datele de pe document nu sunt complet vizibile. Vă rugăm să refaceți poza astfel incât aceasta sa fie color, toate datele să fie clar vizibile, iar toate 4 laturile documentului să fie incluse în poză.  ";
             break;
         case "option6":
-            template = " <center> &lt;center&gt; Rezoluția documentului este prea mică. Vă rugăm să refaceti fotografia astfel încât aceasta să aibă o rezoluție mai mare. &lt;br&gt;&lt;br&gt; ";
+            template = " <center> &lt;center&gt; Rezoluția documentului este prea mică. Vă rugăm să refaceti fotografia astfel încât aceasta să aibă o rezoluție mai mare.  ";
             break;
         case "option7":
-            template = " <center> &lt;center&gt; Nu sunt acceptate capturi de ecran în vederea verificării documentelor. Vă rugăm să refaceți o poză documentului în original. &lt;br&gt;&lt;br&gt; ";
+            template = " <center> &lt;center&gt; Nu sunt acceptate capturi de ecran în vederea verificării documentelor. Vă rugăm să refaceți o poză documentului în original.  ";
             break;
         case "option8":
-            template = " <center> &lt;center&gt; Documentul este expirat. Vă rugăm să încărcați un document valid. &lt;br&gt;&lt;br&gt; ";
+            template = " <center> &lt;center&gt; Documentul este expirat. Vă rugăm să încărcați un document valid.  ";
             break;
         case "option9":
-            template = " <center> &lt;center&gt; Sunt acceptate doar documente emise în România. Vă rugăm să trimiteți poza unei cărți de identitate emisă în România sau poza față-verso a permisului de ședere. &lt;br&gt;&lt;br&gt; ";
+            template = " <center> &lt;center&gt; Sunt acceptate doar documente emise în România. Vă rugăm să trimiteți poza unei cărți de identitate emisă în România sau poza față-verso a permisului de ședere.  ";
             break;
         case "option10":
-            template = " <center> &lt;center&gt; Documentul nu este acceptat pentru verificare. Vă rugăm să trimiteți o poză a cărții dumneavoastră de identitate, a primelor două pagini ale pașaportului sau al permisului de ședere. &lt;br&gt;&lt;br&gt; ";
+            template = " <center> &lt;center&gt; Documentul nu este acceptat pentru verificare. Vă rugăm să trimiteți o poză a cărții dumneavoastră de identitate, a primelor două pagini ale pașaportului sau al permisului de ședere.  ";
             break;
         case "option11":
-            template = " <center> &lt;center&gt; Vă rugăm să refaceți poza pașaportului astfel încât primele 2 pagini ale documentului sa fie vizibile în întregime în aceeași poză. &lt;br&gt;&lt;br&gt; ";
+            template = " <center> &lt;center&gt; Vă rugăm să refaceți poza pașaportului astfel încât primele 2 pagini ale documentului sa fie vizibile în întregime în aceeași poză.  ";
             break;
         default:
             template = "Invalid option selected";
@@ -61,19 +61,19 @@ function otherDocuments() {
 
     switch(selectedOption) {
         case "option1":
-            template = "<center> &lt;center&gt; Verificarea identității nu a fost finalizată. Vă rugăm reîncărcați poza CI și o poză de tip selfie în care să țineți CI în dreptul feței. Aveți grijă ca toate detaliile de pe CI, cât și fața dumneavoastră să fie complet vizibile.  &lt;br&gt;&lt;br&gt; ";
+            template = "<center> &lt;center&gt; Verificarea identității nu a fost finalizată. Vă rugăm reîncărcați poza CI și o poză de tip selfie în care să țineți CI în dreptul feței. Aveți grijă ca toate detaliile de pe CI, cât și fața dumneavoastră să fie complet vizibile.   ";
             break;
         case "option2":
-            template = "<center> &lt;center&gt; Vă rugăm să încărcați o factură de utilități nu mai veche de 3 luni pe care să fie vizibilă adresa dumneavoastră din buletin.   &lt;br&gt;&lt;br&gt;";
+            template = "<center> &lt;center&gt; Vă rugăm să încărcați o factură de utilități nu mai veche de 3 luni pe care să fie vizibilă adresa dumneavoastră din buletin.   ";
             break;
         case "option3":
-            template = "<center> &lt;center&gt; Vă rugăm să ne trimiteți un video de cel putin 10 secunde la &lt;b&gt; contact@winbet.ro &lt;b&gt;, ținând buletinul în mână și site-ul WINBET.RO vizibil în fundal. &lt;br&gt;&lt;br&gt;";
+            template = "<center> &lt;center&gt; Vă rugăm să ne trimiteți un video de cel putin 10 secunde la &lt;b&gt; contact@winbet.ro &lt;b&gt;, ținând buletinul în mână și site-ul WINBET.RO vizibil în fundal. ";
             break;
         case "option4":
             template = "<center> &lt;center&gt; Vă rugăm să retrageți  &lt;/b&gt; întregul câștig obținut din bonus &lt;/b&gt; În caz contrar,  &lt;/b&gt;orice sumă rămasă pe cont  &lt;/b&gt; obținută din bonus va fi  &lt;/b&gt; anulată &lt;/b&gt; conform Termenilor și Condițiilor.";
             break;
         case "option5":
-            template = "<center>&lt;center&gt;Vă rugăm încărcați &lt;b&gt;<b>o poză validă a cărții dumneavoastră de identitate</b> &lt;/b&gt;. Aveți grijă ca toate detaliile de pe CI să fie complet vizibile.&lt;br&gt;&lt;br&gt;<br><br>";
+            template = "<center>&lt;center&gt;Vă rugăm încărcați &lt;b&gt;<b>o poză validă a cărții dumneavoastră de identitate</b> &lt;/b&gt;. Aveți grijă ca toate detaliile de pe CI să fie complet vizibile.<br><br>";
             break;   
         default:
             template = "Invalid option selected";
@@ -101,7 +101,10 @@ function cardHolder(){
     return; 
   }
   let template =  `
-  <center>&lt;center&gt;Vă rugăm să încărcați poze față-verso ale cardului cu ultimele cifre  &lt;/b&gt;<b> ${input}</b>&lt;/b&gt;. &lt;br&gt;&lt;br&gt;<br><br>Pe poza față trebuie să fie vizibile <b> primele 6 si ultimele 4 cifre ale numărului cardului, data de expirare si numele titularului</b>, iar pe spate trebuie să fie <b>acoperit CVV-ul</b>.&lt;br&gt;&lt;br&gt;`;
+  <center>&lt;center&gt;Vă rugăm să încărcați poze față-verso ale cardului cu ultimele cifre 
+   &lt;/b&gt;<b> ${input}</b>&lt;/b&gt;. <br><br>Pe poza față trebuie să fie vizibile   <b> &lt;b&gt; primele 6 si 
+   ultimele 4 cifre ale numărului cardului, data de expirare si numele titularului &lt;/b&gt; </b> , iar pe spate trebuie să fie 
+    <b> &lt;b&gt;  acoperit CVV-ul &lt;/b&gt; </b>`;
 
 
   messageStack.push(template);
@@ -127,7 +130,7 @@ function bankStatemant(){
   }
 
   let template = `
-  <center>&lt;center&gt;Vă rugăm să încărcați un extras de cont pentru cardul cu ultimele cifre<b> &lt;b&gt; ${input} &lt;b&gt;</b> pe care să fie vizibile numele dumneavoastră complet, numărul de card și o tranzacție făcută către WINBET.&lt;br&gt;&lt;br&gt;`;
+  <center>&lt;center&gt;Vă rugăm să încărcați un extras de cont pentru cardul cu ultimele cifre<b> &lt;b&gt; ${input} &lt;b&gt;</b> pe care să fie vizibile numele dumneavoastră complet, numărul de card și o tranzacție făcută către WINBET.`;
 
   
   messageStack.push(template);
@@ -167,13 +170,13 @@ function nonHolderCard(){
   // If inputs are not empty, proceed with adding the message to the stack
   let template =  ` <center>&lt;center&gt;Vă rugăm să încărcați pozele față-verso ale cardului cu ultimele cifre <b>${inputCard}</b>, precum și poza buletinului d-lui/d-nei <b>${inputName}</b> și o declarație pe propria răspundere a acestuia.
 
-  &lt;br&gt &lt;br&gt <br><br>
+  &lt;br&gt;&lt;br&gt;<br><br>
   
   Declarația trebuie făcută după modelul: “<b>Subsemnatul ${inputName} deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe cardul cu ultimele cifre "${inputCard}" către Winbet.ro</b>”. Declarația trebuie să fie datată și semnată.
   
-  &lt;br&gt &lt;br&gt <br><br>
+  &lt;br&gt;&lt;br&gt;<br><br>
   
-  Vă reamintim că retragerile pot fi efectuate doar pe metode ce vă aparțin.&lt;br&gt;&lt;br&gt;
+  Vă reamintim că retragerile pot fi efectuate doar pe metode ce vă aparțin.
          
       `;
 
@@ -204,7 +207,7 @@ if (errors.length > 0) {
 }
 
 let  template = `
-Declarația trebuie făcută după modelul: “<b>Subsemnatul ${inputName} deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe cardul cu ultimele cifre "${inputCard}" către Winbet.ro</b>”. Declarația trebuie să fie datată și semnată.&lt;br&gt;&lt;br&gt;`
+Declarația trebuie făcută după modelul: “<b>Subsemnatul ${inputName} deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe cardul cu ultimele cifre "${inputCard}" către Winbet.ro</b>”. Declarația trebuie să fie datată și semnată.`
 
 messageStack.push(template);
 renderAllMessages();
@@ -234,7 +237,7 @@ if (errors.length > 0) {
 
 
 
-let  template = `Va rugam incarcati pozele buletinului titularului cardului cu ultimele cifre &lt;/b&gt;<b>${inputCard} - ${inputName}</b>&lt;/b&gt;&lt;br&gt;&lt;br&gt;`
+let  template = `Va rugam incarcati pozele buletinului titularului cardului cu ultimele cifre &lt;/b&gt;<b>${inputCard} - ${inputName}</b>&lt;/b&gt;`
 
 messageStack.push(template);
 renderAllMessages();
@@ -275,7 +278,7 @@ function eWalletHolder(){
   }
 
   let template = `
-  <center>  &lt;center&gt; Va rugam incarcati o captura de ecran din contul de   ${selectOption } :  ${input}  &lt;br&gt;&lt;br&gt;. <br> <br> Pe captura de ecran trebuie sa fie vizibile <b>numele titularului contului si adresa de e-mail - ${input}. &lt;br&gt;&lt;br&gt;`;
+  <center>  &lt;center&gt; Va rugam incarcati o captura de ecran din contul de   ${selectOption } :  ${input}  . <br> <br> Pe captura de ecran trebuie sa fie vizibile <b>numele titularului contului si adresa de e-mail - ${input}. `;
 
   messageStack.push(template);
   renderAllMessages();
@@ -315,9 +318,9 @@ function nonHolderEWallet() {
   let template = `
   <center>Vă rugăm să încărcați o captură de ecran din contul de ${selectOption} <b>${inputValue}</b>, precum și poza buletinului d-lui/d-nei <b>${inputName}</b> și o declarație pe propria răspundere a acestuia.
   <br><br>
-  Declarația trebuie făcută după modelul: “<b>${inputName}, deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de ${selectOption} cu adresa de e-mail: ${inputValue} către Winbet.ro</b>”.&lt;br&gt;&lt;br&gt;
+  Declarația trebuie făcută după modelul: “<b>${inputName}, deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de ${selectOption} cu adresa de e-mail: ${inputValue} către Winbet.ro</b>”.
   <br><br>
-  Declarația trebuie să fie datată și semnată.&lt;br&gt;&lt;br&gt;
+  Declarația trebuie să fie datată și semnată.
   `;
 
   messageStack.push(template);
@@ -357,7 +360,7 @@ function declarationEwalletBelong(){
     return;
   }
 
-  let template = `  Vă rugăm  încărcați declarația   după modelul: “<b>${inputName} , deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de ${selectOption} cu adresa de e-mail ${inputValue} către Winbet.ro</b>”.&lt;br&gt;&lt;br&gt;`;
+  let template = `  Vă rugăm  încărcați declarația   după modelul: “<b>${inputName} , deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de ${selectOption} cu adresa de e-mail ${inputValue} către Winbet.ro</b>”.`;
 
   messageStack.push(template);
   renderAllMessages();
@@ -393,7 +396,7 @@ function additionalIDwallet(){
   }
 
 
-let  template = `Va rugam incarcati pozele buletinului titularului contului de ${selectOption} asociat adresei de <b>&lt;/b&gt; e-mail:${inputValue} - ${inputName}</b>&lt;/b&gt;&lt;br&gt;&lt;br&gt; `
+let  template = `Va rugam incarcati pozele buletinului titularului contului de ${selectOption} asociat adresei de <b>&lt;/b&gt; e-mail:${inputValue} - ${inputName}</b>&lt;/b&gt; `
 
 messageStack.push(template);
 renderAllMessages();
@@ -409,7 +412,7 @@ renderAllMessages();
 
     let calc  = ((taxOff * 100) /97) + (sum - limit);
     let debited = calc.toFixed(2);
-    template =  `  <center>&lt;center&gt;Limita maximă de retragere din oferta jucată este de <b>${limit} RON </b> .&lt;br&gt;&lt;br&gt; <br><br>Suma disponibilă pentru retragere a fost returnată în contul de jucător, iar suma de <b>${debited} RON </b> a fost anulată conform Termenilor și Condițiilor. &lt;br&gt;&lt;br&gt;`
+    template =  `  <center>&lt;center&gt;Limita maximă de retragere din oferta jucată este de <b>${limit} RON </b> . <br><br>Suma disponibilă pentru retragere a fost returnată în contul de jucător, iar suma de <b>${debited} RON </b> a fost anulată conform Termenilor și Condițiilor. `
     
     messageStack.push(template);
     renderAllMessages();
@@ -429,7 +432,7 @@ function deposit(){
 
 
   let template = `
-  <center>&lt;center&gt;Pentru retragerea câștigurilor din oferta jucată este necesară o depunere de <b>${input} RON</b>, efectuată în ziua retragerii, după activarea bonusului. &lt;br&gt;`;
+  <center>&lt;center&gt;Pentru retragerea câștigurilor din oferta jucată este necesară o depunere de <b>${input} RON</b>, efectuată în ziua retragerii, după activarea bonusului. ;`;
 
   
   messageStack.push(template);
@@ -475,7 +478,7 @@ function copyContent() {
   
   function renderAllMessages() {
     // Render all messages in the stack to the output div
-    document.getElementById("output").innerHTML = messageStack.join("<br><br>");
+    document.getElementById("output").innerHTML = messageStack.join("&lt;br&gt; &lt;br&gt; <br><br>");
   }
 
 
