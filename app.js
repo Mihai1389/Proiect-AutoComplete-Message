@@ -116,6 +116,30 @@ function cardHolder(){
   renderAllMessages();
 }
 
+function cardsHolder(){
+  // Get the value of the input with ID "inputCard"
+  let input = document.getElementById("inputCard").value.trim(); // Trim whitespace
+
+  let errors = []; 
+
+  if (!validateInput(input)) {
+    errors.push("Please enter a valid cards");
+  }
+  
+  if (errors.length > 0) {
+    
+    alert("Holder Card:\n" + errors.join("\n"));
+    return; 
+  }
+  let template =  `
+  <center>&lt;center&gt;Vă rugăm să încărcați poze față-verso ale cardurilor cu ultimele cifre 
+  &lt;/b&gt;<b> ${input}</b>&lt;/b&gt;.&lt;br&gt;&lt;br&gt; <br><br>Pe poza față trebuie să fie vizibile   <b> &lt;b&gt; primele 6 si ultimele 4 cifre ale numărului cardului, data de expirare si numele titularului &lt;/b&gt; </b> , iar pe spate trebuie să fie 
+   <b> &lt;b&gt;  acoperit CVV-ul. &lt;/b&gt; </b>`
+
+
+  messageStack.push(template);
+  renderAllMessages();
+}
 
 
 function bankStatemant(){
@@ -491,11 +515,7 @@ function copyContent() {
   }
 
 
-function validateInput(input) {
-  // Check if the input is empty
-  return input !== "";
-}
-  
+
 function validateDropdown(option) {
   return ["Paysafe", "Skrill", "Netter"].includes(option);
 }
@@ -523,3 +543,4 @@ function customMessage() {
   // Clear the input field
   inputElement.value = "";
 }
+
