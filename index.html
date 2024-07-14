@@ -14,76 +14,71 @@
 
 
 
-
+<div class="firstblock">
 <div class="fixed">
     <select class="dropdown-button" id="dropdownFixedMessages">
         <option disabled selected>Confirm Identity</option>
         <option value="option1">Nume Incorect</option>
         <option value="option2">CNP Incorect</option>
-        <option value="option3">Schimbarea numelui (casatorie/divort)</option>
-        <option value="option4">Rezolutia documentului este prea mica</option>
-        <option value="option5">Datele nu sunt complet vizibile</option>
-        <option value="option6">Document incadrat necorespunzator</option>
-        <option value="option7">Rezolutia documentului este prea mica</option>
-        <option value="option8">Captura de ecran</option>
-        <option value="option9">Documentul este expirat.</option>
-        <option value="option10">Document invalid.</option>
-        <option value="option11">Documente emise in alte tari.</option>
-        <option value="option12">Poza pasaportului nu include ambele pagini.</option>
-    </select><button class="button" onclick="identityConfirmation()">Submit</button>
-</div>
-
-<div class="fixed">
+        <option value="option3">Schimbarea numelui</option>
+        <option value="option4">Rezolutia mica</option>
+        <option value="option5">Vizibilitate date</option>
+        <option value="option6">Incadrare necorespunzatoare</option>
+        <option value="option7">Captura de ecran</option>
+        <option value="option8">Document expirat.</option>
+        <option value="option9">Document invalid.</option>
+        <option value="option10">Document emise in alte tari.</option>
+        <option value="option11">Poza pasaport.</option>
+    </select>
+    <button class="button" onclick="identityConfirmation()">Submit</button>
+    </div>
+    <div class="fixed">
     <select class="dropdown-button" id="dropdownOtherDoc">
         <option disabled selected>Other Documents</option>
         <option value="option1">Cerere selfie</option>
         <option value="option2">Cerere factura de utilitati</option>
         <option value="option3">Confirmare Video-Sport</option>
         <option value="option4">Retreagere unica</option>
-        <option value="option5">Actualizare buletin</option>
+        <option value="option5">Buletin</option>
         <option value="option6">Cerere selfie + CI </option>
-    </select><button class="button" onclick="otherDocuments()">Submit</button>
+        <option value="option7">ID + CC </option>
+        <option value="option8">Reject E-wallet </option>
+        <option value="option9">Selfie + Card </option>
+    
+    </select>
+    <button class="button" onclick="otherDocuments()">Submit</button>
 </div>
-
+</div>
 
 <div class="container">
 <div class= "box">
-     <h3>Holder Card<h3>
-    <input type="text" id="inputCard" placeholder="Card">
+     <h3>Card<h3>
+    <input type="text" id="inputCard" placeholder="xxxx">
+    <input type="text" id="inputCardNameHolder" placeholder="Ex: Jon Doe" >
+    <br>
     <button class = "button"  onclick="cardHolder()">Card </button>
-    <button class = "button"  onclick="cardsHolder()">Card ++  </button>
+    <button class = "button"  onclick="revolut()">Revolut Virtual  </button>
     <button class="button"  onclick="bankStatemant()">Bank Statement</button>
-
-    <h3>Non-Holder Card</h3>
-<input type="text" id="inputCardBelong"  maxlength="10" placeholder="Card">
-<input type="text" id="inputCardNameHolder" placeholder="Name" >
-<button class = "button" onclick="nonHolderCard()">Card </button>
-<br><br>
-<button class="button" onclick="declaration()">Declaration</button>
-<button class="button" onclick="additionalID()">Additional</button>
+    <br><br>
+    <button class="button" onclick="declaration()">Declaration</button>
+    <button class="button" onclick="additionalID()">Additional</button>
 </div>
+
+
 <div class= "box"> 
-    <h3>E-wallet Holder </h3>
+    <h3>E-wallet</h3>
     <select class="dropdown-button" id="dropdown">
         <option disabled selected>E-wallet</option>
         <option value="Paysafe">Paysafe</option>
         <option value="Skrill">Skrill</option>
-        <option value="Netter">Netter</option>
+        <option value="Neteller">Neteller</option>
       </select>
       <input type="text" id="mail_wallet" placeholder="E-mail">
-      <button class = "button" onclick="eWalletHolder()">Generate E-wallet</button>
-
-      <h3>E-wallet Non-Holder</h3>
-      <select class="dropdown-button" id="dropDownNonHolder">
-          <option disabled selected>E-wallet</option>
-          <option value="Paysafe">Paysafe</option>
-          <option value="Skrill">Skrill</option>
-          <option value="Netter">Netter</option>
-        </select>
-        <input type="text" id="walletNonHolder" placeholder="E-mail">
-        <input type="text" id="nameNonHolder" placeholder="Name">
-        <button class = "button" onclick="nonHolderEWallet()">Generate E-wallet</button>
-        <br><br>
+      <input type="text" id="name_wallet" placeholder="Name">
+      <br>
+      <button class = "button" onclick="eWallet()">Request E-wallet </button>
+      <button class = "button" onclick="rejectEwallet()">Reject E-wallet </button> 
+      <br><br>
         <button class="button" onclick="declarationEwalletBelong()">Declaration</button>
         <button class="button" onclick="additionalIDwallet()">Additional</button>
 </div>
@@ -93,7 +88,7 @@
     <input type="text"  id= "limit" placeholder="Max WD">
     <input type="text" id = "sumCont" placeholder="Cont " >
     <br>
-    <button  class = "button"  onclick="calculationTax()">Calculeaza</button>
+    <button  class = "button"  onclick="calculationTax()">Submit</button>
 <h3>Deposit</h3>
     <input type="text" id="deposit" placeholder="Suma">
     <button class="button" onclick="deposit()">Deposit</button>
@@ -105,10 +100,11 @@
     <button class="button" onclick="customMessage()">Submit</button>
 </div>
 
+
 </div>
 
 <div class="buttons">
-    <button  class = "button" id = "copyContent" onclick="copyContent()">Copy Content</button>
+<button  class = "button" id = "copyContent" onclick="copyContent()">Copy Content</button>
 <button class="button" onclick="undoLastMessage()">Undo</button>
 
 </div>

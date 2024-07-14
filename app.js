@@ -1,7 +1,7 @@
 
-//  - displat <center>
+// &lt;center&gt; - displat <center>
 // ; - display <br>
-//  <b> - <b>
+//  <b>- <b>
 //  </b> = </b>
 
 //   });
@@ -12,42 +12,74 @@ function identityConfirmation() {
     var selectedOption = dropdown.options[dropdown.selectedIndex].value;
     var template = "";
 
+    let  name_incorrect = `În urma verificării, am observat că numele din documentul furnizat nu corespunde cu cel din contul tau. Pentru a finaliza procesul de verificare al contului în conformitate cu politicile noastre de securitate, te rugăm să trimiti o poză selfie în care tii buletinul langa fata ta. 
+    Iti mulțumim pentru înțelegere și pentru cooperare în acest proces important.`;
+
+    let cnp_incorect =`Am observat că CNP-ul din contul tau nu se potrivește cu cel din documentul pe care l-ai trimis. Pentru a asigura acuratețea și corectitudinea informațiilor, te rugăm să creezi un cont nou folosind datele corecte. 
+    Iti mulțumim pentru înțelegere și pentru că faci tot posibilul să clarificăm această situație!`;
+
+    let name_change = `Am observant o diferenta între numele de pe documentul pe care l-ai trimis și cel din contul tau.
+    Dacă s-a întâmplat să iti schimbi numele recent, te rugăm să ne trimiti o fotografie a certificatului de căsătorie sau a celui de divorț pentru a actualiza informațiile.`;
+
+
+    let  data_visibility =  `Îți mulțumim pentru furnizarea documentului, însă unele informații nu sunt complet vizibile. Te rugăm să ne trimiți o nouă fotografie color, cu toate informațiile și marginile documentului clar vizibile.`
+
+    let doc_framed = `Am observat că documentul nu este încadrat corespunzător. Pentru a putea valida contul, te rugăm să incarci o poză cu documentul în care să fie vizibile toate laturile cât și toate datele de pe document.`;
+
+    let doc_rezolution = `Am observat că rezoluția documentului este prea mică. Pentru a putea folosi documentul la calitatea dorită, te rugăm să faci o fotografie cu o rezoluție mai mare.`;
+
+    let  doc_ss = `Te informăm că, în cadrul procesului de verificare a documentelor, nu sunt permise capturile de ecran. Pentru a ne asigura de autenticitatea documentului, te rugăm să realizezi o nouă fotografie a acestuia în formatul original.`;
+
+    let doc_expired = `Te informăm că documentul trimis este expirat. Pentru a putea continua procesul, este necesar ca documentul să fie valabil și autentic, cu data de expirare menționată.
+    Te rugăm să ne trimiti un document actualizat.`;
+    
+    let doc_invalid = ` 
+    Vreau să te informez că documentul trimis nu este acceptat pentru verificarea contului. Te rog să ne furnizezi o fotografie clară a unuia dintre următoarele documente:
+    Cartea de identitate
+    Primele două pagini ale pașaportului
+    Permisul de ședere`;
+
+
+    let doc_another_country = `Vreau să te informez că nu sunt acceptate documente emise in alte tari. Te rog să ne furnizezi o fotografie clară a unuia dintre următoarele documente emise in Romania:
+    Cartea de identitate
+    Primele două pagini ale pașaportului
+    Permisul de ședere`;
+
+    let doc_passaport = `Te rugăm să faci o fotografie clară a pașaportului tău în așa fel încât primele două pagini să fie vizibile complet în aceeași imagine. Asigură-te că sunt vizibile în mod clar următoarele detalii: numele tău, CNP-ul, data expirării și numărul pașaportului.`;
+
     switch(selectedOption) {
         case "option1":
-            template = "<center>  Numele din cont nu corespunde cu cel de pe document. Pentru actualizarea datelor dumneavoastră, vă rugăm să trimiteți o poză de tip selfie în care să țineți buletinul în dreptul feței.  ";
+            template = name_incorrect;
             break;
         case "option2":
-            template = " <center>  CNP-ul din cont nu corespunde cu cel din document. Vă rugăm să va creați un cont cu datele corecte.  ";
+            template = cnp_incorect;
             break;
         case "option3":
-            template = " <center>  Datele de pe document nu corespund cu cele din cont. În cazul schimbării numelui, vă rugăm să încărcați poza certificatului de căsătorie/divorț. ";
+            template = name_change;
             break;
         case "option4":
-            template = " <center>  Rezoluția documentului este prea mică. Vă rugăm să refaceti fotografia astfel încât aceasta să aibă o rezoluție mai mare.  ";
+            template = doc_rezolution;
             break;
         case "option5":
-            template = " <center>  Datele de pe document nu sunt complet vizibile. Vă rugăm să refaceți poza astfel incât aceasta sa fie color, toate datele să fie clar vizibile, iar toate 4 laturile documentului să fie incluse în poză.  ";
+            template = data_visibility;
             break;
         case "option6":
-            template = " <center>  Documentul nu este incadrat corespunzator. Va rugam refaceti poza documentului astfel incat toate laturile acestuia sa fie complet vizibile.";
+            template = doc_framed;
             break;
         case "option7":
-            template = " <center>  Rezoluția documentului este prea mică. Vă rugăm să refaceti fotografia astfel încât aceasta să aibă o rezoluție mai mare.  ";
+            template = doc_ss;
             break;
         case "option8":
-            template = " <center>  Nu sunt acceptate capturi de ecran în vederea verificării documentelor. Vă rugăm să refaceți o poză documentului în original.  ";
+            template = doc_expired;
             break;
         case "option9":
-            template = " <center>  Documentul este expirat. Vă rugăm să încărcați un document valid.  ";
+            template = doc_invalid ;
             break;
         case "option10":
-            template = " <center>  Sunt acceptate doar documente emise în România. Vă rugăm să trimiteți poza unei cărți de identitate emisă în România sau poza față-verso a permisului de ședere.  ";
+            template = doc_another_country;
             break;
         case "option11":
-            template = " <center>  Documentul nu este acceptat pentru verificare. Vă rugăm să trimiteți o poză a cărții dumneavoastră de identitate, a primelor două pagini ale pașaportului sau al permisului de ședere.  ";
-            break;
-        case "option12":
-            template = " <center>  Vă rugăm să refaceți poza pașaportului astfel încât primele 2 pagini ale documentului sa fie vizibile în întregime în aceeași poză.  ";
+            template = doc_passaport
             break;
         default:
             template = "Invalid option selected";
@@ -60,27 +92,60 @@ function identityConfirmation() {
 function otherDocuments() {
     var dropdown = document.getElementById("dropdownOtherDoc");
     var selectedOption = dropdown.options[dropdown.selectedIndex].value;
+    let input = document.getElementById("inputCard").value;
+    // let dropdown = document.getElementById("dropdown");
+    let selectOptionWallet = dropdown.options[dropdown.selectedIndex].value;
+    let mail = document.getElementById("mail_wallet").value;
     var template = "";
+
+
+
+    let selfie = `Pentru a finaliza procesul de verificare a identității, avem nevoie de ajutorul tău. Te rugăm să încarci o poză selfie în care ții cartea de identitate în dreptul feței. Este important ca toate detaliile de pe cartea de identitate și fața ta să fie vizibile complet în fotografie.`;
+
+    let proof_of_adress =` Te rugăm să încarci o factură (de utilități, telefonie etc.) emisă în ultimele 3 luni. Asigură-te că adresa din buletinul tău de identitate este clar vizibilă pe factură.`;
+
+    let video_sport = `Te rugăm să trimiți un videoclip la adresa contact@exemplu.ro, asigurându-te că site-ul exemplu.ro deschis la sectiunea Sport este vizibil și că ești prezent în cadru, de asemenea in video trebuie sa fie vizibil si username-ul tau . Durata minimă a clipului video ar trebui să fie de 15 secunde.`;
+
+    let single_withdrawal = `Te rugăm să efectuezi retragerea întregului câștig obținut din bonus. În caz contrar, orice sumă rămasă în cont, provenită din bonus, va fi **anulată** conform Termenilor și Condițiilor.`;
+
+    let id_update =`Vă rugăm să încărcați  buletin în contul dumneavoastră.`;
+
+    let selfie_id = `Te rugăm să încarci o poză selfie în care ții cartea de identitate în dreptul feței. Este important ca toate detaliile de pe cartea de identitate și fața ta să fie vizibile complet în fotografie.`;
+
+    let id_cc = `Pentru a putea să te ajutăm cât mai repede, te rugăm să ne trimiti o fotografie care să includă atât buletinul tau, cât și cardul cu ultimele cifre ${input}.`;
+
+    let cc_recolut = `Pentru a valida cardul virtual cu terminația ${input} vă rugam să încarcați un extras de cont în care să fie vizibilit numele dumneavoastră cât și o tranzacție către exemplu sau o confirmare a cardului de Revolut (în partea stângă de sus a aplicatiei – Cont – Documente – General - Confirmare card).`
+    
+    let  selfie_cc = `Te rugăm să încarci o poză selfie în care ții cradul cu ultimele cifre ${input}  în dreptul feței. Este important ca toate detaliile de pe card și fața ta să fie vizibile complet în fotografie.`
 
     switch(selectedOption) {
         case "option1":
-            template = "<center>  Verificarea identității nu a fost finalizată. Vă rugăm reîncărcați poza CI și o poză de tip selfie în care să țineți CI în dreptul feței. Aveți grijă ca toate detaliile de pe CI, cât și fața dumneavoastră să fie complet vizibile.   ";
+            template = selfie;
             break;
         case "option2":
-            template = "<center> Verificarea identității nu a fost finalizată. Vă rugăm încărcați o poză de tip selfie în care să țineți CI în dreptul feței. Aveți grijă ca toate detaliile de pe CI, cât și fața dumneavoastră să fie complet vizibile.";
+            template = proof_of_adress;
             break;
         case "option3":
-            template = "<center>  Vă rugăm să ne trimiteți un video de cel putin 10 secunde la  contact@Winbet.ro , ținând buletinul în mână și site-ul Winbet.RO vizibil în fundal. ";
+            template = video_sport;
             break;
         case "option4":
-            template = "<center>  Vă rugăm să retrageți   întregul câștig obținut din bonus  În caz contrar,  orice sumă rămasă pe cont   obținută din bonus va fi   anulată  conform Termenilor și Condițiilor.";
+            template = single_withdrawal;
             break;
         case "option5":
-            template = "<center>Vă rugăm încărcați <b>o poză validă a cărții dumneavoastră de identitate</b> . Aveți grijă ca toate detaliile de pe CI să fie complet vizibile.";
+            template = id_update ;
             break;  
         case "option6":
-            template = "<center>Vă rugăm încărcați <b>o poză validă a cărții dumneavoastră de identitate</b> . Aveți grijă ca toate detaliile de pe CI să fie complet vizibile.";
-              break;   
+            template = selfie_id;
+            break;
+        case "option7":
+            template = id_cc ;
+            break;  
+        case "option8":
+            template = cc_recolut ;
+              break;
+        case "option9":
+              template = selfie_cc ;
+              break;
           default: 
             template = "Invalid option selected";
     }
@@ -106,17 +171,14 @@ function cardHolder(){
     alert("Holder Card:\n" + errors.join("\n"));
     return; 
   }
-  let template =  `
-  <center>Vă rugăm să încărcați poze față-verso ale cardului cu ultimele cifre 
-  <b> ${input}</b>.   <br><br>Pe poza față trebuie să fie vizibile   <b>  primele 6 si ultimele 4 cifre ale numărului cardului, data de expirare si numele titularului  </b> , iar pe spate trebuie să fie 
-   <b>   acoperit CVV-ul.  </b>`
+  let template = `Te rugăm să refaci pozele față-verso ale cardului, cu ultimele cifre afișate ca ${input}. Pe poza din față trebuie să fie vizibile primele 6 și ultimele 4 cifre ale numărului cardului, data de expirare și numele titularului, iar pe spate te rugăm să acoperi CVV-ul.`;
 
 
   messageStack.push(template);
   renderAllMessages();
 }
 
-function cardsHolder(){
+function revolut(){
   // Get the value of the input with ID "inputCard"
   let input = document.getElementById("inputCard").value.trim(); // Trim whitespace
 
@@ -131,11 +193,7 @@ function cardsHolder(){
     alert("Holder Card:\n" + errors.join("\n"));
     return; 
   }
-  let template =  `
-  <center>Vă rugăm să încărcați poze față-verso ale cardurilor cu ultimele cifre 
-  <b> ${input}</b>.   <br><br>Pe poza față trebuie să fie vizibile   <b>  primele 6 si ultimele 4 cifre ale numărului cardului, data de expirare si numele titularului  </b> , iar pe spate trebuie să fie 
-   <b>   acoperit CVV-ul.  </b>`
-
+  let template =  `Pentru a valida cardul virtual cu terminația ${input} vă rugam să încarcați un extras de cont în care să fie vizibilit numele dumneavoastră cât și o tranzacție către exemplu sau o confirmare a cardului de Revolut (în partea stângă de sus a aplicatiei – Cont – Documente – General - Confirmare card).`
 
   messageStack.push(template);
   renderAllMessages();
@@ -158,74 +216,28 @@ function bankStatemant(){
     return; 
   }
 
-  let template = `
-  <center>Vă rugăm să încărcați un extras de cont pentru cardul cu ultimele cifre<b>  ${input} </b> pe care să fie vizibile numele dumneavoastră complet, numărul de card și o tranzacție făcută către Winbet.`;
-
-  
+  let template = `Te rugăm să încarci un extras de cont pentru cardul cu ultimele cifre ${input}.
+  <br>
+  Asigură-te că pe extras sunt vizibile **numele titularului cardului, ultimele 4 cifre ale cardului și o tranzacție către exemplu**.`;
   messageStack.push(template);
   renderAllMessages();
 };
 
 
 
-
-
-
-
-
-
-function nonHolderCard(){
-  // Get the value of the inputs with IDs "inputCard" and "inputName"
-  let inputCard = document.getElementById("inputCardBelong").value.trim();
-  let inputName = document.getElementById("inputCardNameHolder").value.trim();  // Trim whitespace
-
-  let errors = []; 
-
-  if (!validateInput(inputCard)) {
-    errors.push("Please enter a valid card");
-  }
-  
-  if (!validateInput(inputName)) {
-    errors.push("Please enter a valid name");
-  }
-  
-  if (errors.length > 0) {
-    
-    alert("Non-Holder Card:\n" + errors.join("\n"));
-    return; 
-  }
-  
-  
-  // If inputs are not empty, proceed with adding the message to the stack
-  let template =  ` <center>  Vă rugăm să încărcați pozele față-verso ale cardului cu ultimele cifre <b>  ${inputCard}   </b>, precum și poza buletinului d-lui/d-nei <b>   ${inputName}   </b> și o declarație pe propria răspundere a acestuia.
-
-    <br><br>
-  
-  Declarația trebuie făcută după modelul: “<b>   Subsemnatul ${inputName} deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe cardul cu ultimele cifre "${inputCard}" către Winbet.ro.    </b>”. Pe declarație trebuie să se regăsească data și semnătura.
-  
-    <br><br>
-  
-  <b>   Vă reamintim că retragerile pot fi efectuate doar pe metode ce vă aparțin.   </b>
-         
-      `;
-
-  messageStack.push(template);
-  renderAllMessages();
-}
-
 function declaration(){
-  let inputCard = document.getElementById("inputCardBelong").value;
- let inputName = document.getElementById("inputCardNameHolder").value;
+  let card = document.getElementById("inputCard").value;
+ let name = document.getElementById("inputCardNameHolder").value;
 
 
 
 let errors = []; 
 
-if (!validateInput(inputCard)) {
+if (!validateInput(card)) {
   errors.push("Please enter a valid card");
 }
 
-if (!validateInput(inputName)) {
+if (!validateInput(name)) {
   errors.push("Please enter a valid name");
 }
 
@@ -236,59 +248,54 @@ if (errors.length > 0) {
 }
 
 let  template = `
-<center>  Declarația trebuie făcută după modelul: “<b>Subsemnatul ${inputName} deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe cardul cu ultimele cifre "${inputCard}" către Winbet.ro</b>”. &lt;br&gt &lt;br&gt <br><br>
-  
-  Pe declarație trebuie să se regăsească data și semnatura.`
+Te rugăm să încarci declarația pe propria răspundere.
+<br>
+Declarația trebuie făcută după modelul: “Subsemnatul ${name}, deținător al cărții de identitate seria ..., nr. ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe cardul cu ultimele cifre ${card} către exemplu.ro.”
+<br>
+Pe declarație trebuie să se regăsească data și semnatura.
+<br>
+Vă reamintim că retragerile sunt permise doar prin metode de plata inregistrate in numele dumneavoastra.
+
+`;
 
 messageStack.push(template);
 renderAllMessages();
 }
 
 function additionalID(){
-  let inputCard = document.getElementById("inputCardBelong").value;
- let inputName = document.getElementById("inputCardNameHolder").value;
+  let card = document.getElementById("inputCard").value;
+ let name = document.getElementById("inputCardNameHolder").value;
 
 
 let errors = []; 
 
 
-if (!validateInput(inputCard)) {
+if (!validateInput(card)) {
   errors.push("Please enter a valid card");
 }
 
-if (!validateInput(inputName)) {
+if (!validateInput(name)) {
   errors.push("Please enter a valid name");
 }
 
 if (errors.length > 0) {
   
-  alert("Non-Holder Card:\n" + errors.join("\n"));
+  alert("Card:\n" + errors.join("\n"));
   return; 
 }
 
 
 
-let  template = ` <center>   Vă rugam încarcați pozele buletinului titularului cardului cu ultimele cifre <b>${inputCard} - ${inputName} </b>.`
+let  template = `Te rugăm să încarci pozele actului de identitate al titularului cardului cu ultimele cifre ${card} - ${name}.`;
 
 messageStack.push(template);
 renderAllMessages();
 }
 
-
-
-
-
-
-
-
-
-
-
-
-function eWalletHolder(){
+function eWallet(){
   let dropdown = document.getElementById("dropdown");
   let selectOption = dropdown.options[dropdown.selectedIndex].value;
-  let input = document.getElementById("mail_wallet").value;
+  let mail = document.getElementById("mail_wallet").value;
 
   let errors = []; 
 
@@ -298,30 +305,29 @@ function eWalletHolder(){
   }
 
   
-  if (!validateInput(input)) {
+  if (!validateInput(mail)) {
     errors.push("Please enter a valid E-mail");
   }
 
   if (errors.length > 0) {
     
-    alert("E-wallet Non-Holder:\n" + errors.join("\n"));
+    alert("E-wallet Request:\n" + errors.join("\n"));
     return; 
   }
 
-  let template = ` <center>   Va rugam incarcati o captura de ecran din contul de  <b>   ${selectOption } :  ${input}  .  </b>   
-  <br><br> Pe captura de ecran trebuie sa fie vizibile <b>   numele titularului contului si adresa de e-mail - ${input}.  </b> `
-
-   ;
+  let template = `Te rugăm să încarci o captură de ecran din contul de ${selectOption} înregistrat cu adresa de e-mail: ${mail}.
+  <br>
+  Pe captura de ecran trebuie să fie vizibile numele titularului contului și adresa  - ${mail}.`;
 
   messageStack.push(template);
   renderAllMessages();
 }
 
 
-function nonHolderEWallet() {
-  let dropdown = document.getElementById("dropDownNonHolder");
-  let inputValue = document.getElementById("walletNonHolder").value.trim();
-  let inputName = document.getElementById("nameNonHolder").value.trim();
+function rejectEwallet() {
+  let dropdown = document.getElementById("dropdown");
+  let mail = document.getElementById("mail_wallet").value.trim();
+  let name = document.getElementById("name_wallet").value.trim();
   let selectOption = dropdown.options[dropdown.selectedIndex].value;
 
 
@@ -333,29 +339,24 @@ function nonHolderEWallet() {
   }
 
   
-  if (!validateInput(inputValue)) {
+  if (!validateInput(mail)) {
     errors.push("Please enter a valid E-mail");
   }
 
   
-  if (!validateInput(inputName)) {
+  if (!validateInput(name)) {
     errors.push("Please enter a valid Name");
   }
 
   if (errors.length > 0) {
     
-    alert("E-wallet Non-Holder:\n" + errors.join("\n"));
+    alert("E-wallet doesn't belong:\n" + errors.join("\n"));
     return; 
   }
 
-  let template = `
-  <center>  Vă rugăm să încărcați o captură de ecran din contul de ${selectOption} <b> ${inputValue}   </b>, precum și poza buletinului d-lui/d-nei <b>   ${inputName}   </b> și o declarație pe propria răspundere a acestuia.
-    <br><br>
-  Declarația trebuie făcută după modelul: “<b>  ${inputName}, deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de ${selectOption} cu adresa de e-mail: ${inputValue} către Winbet.ro   </b>”.
-    <br><br>
-  Pe declarația trebuie să se regăsească data și semnătura.
-  `;
-
+  let template = `Te rugăm să reîncarci o captură de ecran din contul de ${selectOption} înregistrat cu adresa de e-mail: ${mail}.
+  <br>
+  Pe captura de ecran trebuie să fie vizibile numele titularului contului și adresa  - ${mail}.`;
   messageStack.push(template);
   renderAllMessages();
 }
@@ -364,10 +365,9 @@ function nonHolderEWallet() {
 
 
 function declarationEwalletBelong(){
-  let dropdown = document.getElementById("dropDownNonHolder");
-  let inputValue = document.getElementById("walletNonHolder").value;
-  let inputName = document.getElementById("nameNonHolder").value;
-
+  let dropdown = document.getElementById("dropdown");
+  let mail = document.getElementById("mail_wallet").value;
+  let name = document.getElementById("name_wallet").value;
   let selectOption = dropdown.options[dropdown.selectedIndex].value;
   let errors = []; 
 
@@ -377,33 +377,41 @@ function declarationEwalletBelong(){
   }
 
  
-  if (!validateInput(inputValue)) {
+  if (!validateInput(mail)) {
     errors.push("Please enter a valid E-mail");
   }
 
   
-  if (!validateInput(inputName)) {
+  if (!validateInput(name)) {
     errors.push("Please enter a valid Name");
   }
 
   
   if (errors.length > 0) {
   
-    alert("E-wallet Non-Holder:\n" + errors.join("\n"));
+    alert("Declaration e-wallet:\n" + errors.join("\n"));
     return;
   }
 
-  let template = ` <center>  Vă rugăm  încărcați declarația   după modelul: “<b>  ${inputName} , deținător al cărții de identitate nr. ..., seria ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de ${selectOption} cu adresa de e-mail ${inputValue} către Winbet.ro.   </b>”     <br> <br>
+  let template = `
+Te rugăm să încarci declarația pe propria răspundere.
+<br>
+Declarația trebuie făcută după modelul: “Subsemnatul ${name}, deținător al cărții de identitate seria ..., nr. ..., cu CNP ..., declar pe propria răspundere că aprob plățile anterioare și viitoare de pe contul de ${selectOption} asociat adresei de e-mail ${mail} către exemplu.ro.”
+<br>
+Pe declarație trebuie să se regăsească data și semnatura.
+<br>
+Vă reamintim că retragerile sunt permise doar prin metode de plata inregistrate in numele dumneavoastra.
 
-  Pe declarație trebuie să se regăsească data și semnatura. ` 
+
+`;
   messageStack.push(template);
   renderAllMessages();
 }
 
 function additionalIDwallet(){
-  let dropdown = document.getElementById("dropDownNonHolder");
-  let inputValue = document.getElementById("walletNonHolder").value;
-  let inputName = document.getElementById("nameNonHolder").value;
+  let dropdown = document.getElementById("dropdown");
+  let mail = document.getElementById("mail_wallet").value;
+  let name = document.getElementById("name_wallet").value;
 
   let selectOption = dropdown.options[dropdown.selectedIndex].value;
 
@@ -415,11 +423,11 @@ function additionalIDwallet(){
   }
 
  
-  if (!validateInput(inputValue)) {
+  if (!validateInput(mail)) {
     errors.push("Please enter a valid E-mail");
   }
 
-  if (!validateInput(inputName)) {
+  if (!validateInput(name)) {
     errors.push("Please enter a valid Name");
   }
 
@@ -430,7 +438,7 @@ function additionalIDwallet(){
   }
 
 
-let  template = `<center>  Va rugam incarcati pozele buletinului titularului contului de <b>  ${selectOption}  </b>asociat adresei de <b> e-mail:${inputValue} - ${inputName}. </b> `
+let  template = `Va rugam incarcati pozele buletinului titularului contului de  ${selectOption}  asociat adresei de  e-mail: ${mail} - ${name}.`;
 
 messageStack.push(template);
 renderAllMessages();
@@ -446,8 +454,11 @@ renderAllMessages();
 
     let calc  = ((taxOff * 100) /97) + (sum - limit);
     let debited = calc.toFixed(2);
-    template =  `  <center>Limita maximă de retragere din oferta jucată este de <b>  ${limit} RON  </b> .   <br><br>Suma disponibilă pentru retragere a fost returnată în contul de jucător, iar suma de <b>   ${debited} RON  </b> a fost anulată conform <b>  Termenilor și Condițiilor.    </b>`
-    
+    template = `Limita maximă de retragere din oferta jucată este de  ${limit} RON.
+    <br>
+    Suma disponibilă pentru retragere a fost returnată în contul de jucător, iar suma de   ** ${debited} RON**   a fost anulată conform  Termenilor și Condițiilor.`;
+
+
     messageStack.push(template);
     renderAllMessages();
 
@@ -465,9 +476,7 @@ function deposit(){
 }
 
 
-  let template = `
-  <center>Pentru retragerea câștigurilor din oferta jucată este necesară o depunere de <b>  ${input} RON  </b>, efectuată în ziua retragerii, <b>  după activarea bonusului.   </b>`
-
+  let template = `Pentru a putea retrage câștigurile obținute din oferta jucată este necesară o depunere de ${input}, efectuată în ziua retragerii, după activarea bonusului.`;
   
   messageStack.push(template);
   renderAllMessages();
@@ -512,14 +521,30 @@ function copyContent() {
   
   function renderAllMessages() {
     // Render all messages in the stack to the output div
-    document.getElementById("output").innerHTML = messageStack.join("<br><br>");
-    document.querySelector(".output").innerHTML = messageStack.join("<br><br>");
+    document.getElementById("output").innerHTML = messageStack.join("    <br><br>");
+    document.querySelector(".output").innerHTML = messageStack.join("    <br><br>");
   }
 
 
 
 function validateDropdown(option) {
-  return ["Paysafe", "Skrill", "Netter"].includes(option);
+  return ["Paysafe", "Skrill", "Neteller"].includes(option);
+}
+
+
+function addMessage() {
+  // Adauga mesajul introdus in textarea la stiva de mesaje
+  let message = document.getElementById("messageInput").value;
+  messageStack.push(message);
+  // Apeleaza functia de afisare a mesajelor
+  renderAllMessages();
+}
+
+function autoResize(textarea) {
+  // Setează înălțimea minimă pentru text area
+  textarea.style.height = 'auto';
+  // Setează înălțimea text area-ului la înălțimea sa de scroll, astfel încât să nu existe scroll vertical vizibil
+  textarea.style.height = textarea.scrollHeight + 'px';
 }
 
 function customMessage() {
@@ -545,4 +570,3 @@ function customMessage() {
   // Clear the input field
   inputElement.value = "";
 }
-

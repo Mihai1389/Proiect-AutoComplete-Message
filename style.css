@@ -9,6 +9,32 @@ body {
   
 }
 
+
+.firstblock{  display: flex;
+  /* background-color: red; */
+  justify-content: space-around;
+  width: 100%; 
+  margin: 10px 20px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  
+}
+
+.fixed {
+  background-color: #0F0F0F;
+  /* padding: 10px; */
+  /* margin: 10px; */
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+/* Show dropdown content when dropdown button is hovered over */
+.fixed:hover .dropdown-content {
+  display: block;
+  
+}
+/* ---------------------------------------------------------------------------------UPDATED------------------------------------------------------------ */
 .container
  {
   display: flex;
@@ -19,9 +45,6 @@ body {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   margin: 20px
-
-  
-  
 }
 
 .box {
@@ -65,29 +88,26 @@ h3{
   border: 2px solid #333;
   padding: 10px 20px;
   border-radius: 50px;
-  font-size: 14;
+  font-size: 14px;
   cursor: pointer;
   box-shadow: 2px 2px 2px #000;
   /* transition: background-color 0.3s ease; */
   transition: transform 0.3s ease;
-  
 }
 
 .button:hover {
-  background-color: ##3A3A40; 
+  background-color: #3A3A40; 
   transform: scale(1.1); /* Zoom in effect */
   
 }
 
 
   /* Dropdown container styles */
-  .fixed {
-    background-color: #0F0F0F;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    
-}
+
+
+
+
+
  /* Dropdown button styles */
  .dropdown-button{
   background-color: #262626;
@@ -120,11 +140,7 @@ h3{
   border-radius: 8px;
 }
 
-/* Show dropdown content when dropdown button is hovered over */
-.fixed:hover .dropdown-content {
-  display: block;
-  
-}
+
 
 input{
   text-align: center;
@@ -137,7 +153,7 @@ input{
   transition: transform 0.3s ease;
 }
             
-input:hover {
+input :hover {
   color: black; /* Change text color to black */
   background-color: white; /* Change background color to white */
   transform: scale(1.1); /* Zoom in effect */
@@ -188,4 +204,3 @@ input.customMessage {
   overflow: auto;
   margin: 20px;
 }
-
